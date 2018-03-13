@@ -72,6 +72,7 @@ git push -u origin master
 [data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
 
 ![github fork](images/github-fork.gif)
+
 <small>[*github.com/diy](https://github.com/diy/open-sourcerer/blob/master/script.md)</small>
 
 !SUB
@@ -207,7 +208,7 @@ Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zd
 
 ![push](images/push.png)
 
-[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)
+<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
 
 !SUB
 ### Merge requests
