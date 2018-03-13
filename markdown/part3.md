@@ -9,6 +9,8 @@
 
 [gitlab.com](https://gitlab.com)
 
+![gitlab](images/gitlab-logo.png)
+
 GitLab to platforma pracy grupowej dostępna na licencji open source. Udostępnia zarządcę repozytoriów git, system ticketów, narzędzia do recenzji kodu i wiele więcej. Dostępny w 3 wersjach:
  * GitLab CE: Community Edition - [code.cis.gov.pl](https://code.cis.gov.pl)
  * GitLab EE: Enterprise Edition
@@ -19,9 +21,13 @@ GitLab to platforma pracy grupowej dostępna na licencji open source. Udostępni
 
 [github.com](https://github.com)
 
+![github](images/Octocat.png)
+
 Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy dla projektów opensource.
 
 [bitbucket.org](https://bitbucket.org)
+
+![bitbucket](images/bitbucket.png)
 
 Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
 
@@ -37,6 +43,8 @@ ssh-keygen -f ~/.ssh/id_rsa_code
 eval $(ssh-agent)
 ssh-add ~/.ssh/id_rsa_code
 ```
+
+![ssh](images/ssh.png)
 
 !SUB
 ### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
@@ -64,6 +72,7 @@ git push -u origin master
 [data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
 
 ![github fork](images/github-fork.gif)
+<small>[*github.com/diy](https://github.com/diy/open-sourcerer/blob/master/script.md)</small>
 
 !SUB
 ### Klonowanie
@@ -110,9 +119,14 @@ git remote -v
 Możemy śledzić dowolną liczbę zadalnych repozytoriów
 
 ```
-git remote add upstream git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks
+git remote add upstream \
+  git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks
+git fetch upstream
 git remote
+git branch -a
 ```
+
+![forks](images/forks.png)
 
 !SUB
 ### Pobieranie zmian
@@ -127,6 +141,10 @@ git pull --rebase # git fetch + git rebase
 * W rzeczywistości synchronizacja z zdalnym repozytorium przebiega dwu etapowo:
   * Pobieramy aktualny stan zdalnego repozytorium: _**git fetch**_
   * Dołączamy zmiany do lokalnej gałęzi: `git merge` lub `git rebase
+
+![pull](images/pull.jpg)
+
+<small>[*stackexchange](https://physics.stackexchange.com/questions/133614/the-best-way-in-which-a-man-can-pull-a-train)</small>
 
 !SUB
 ### Pobieranie zmian z *upstream*
@@ -181,10 +199,18 @@ git commit
 
 _**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
 
-Wysyłamy lokalne commity:
-
 ```
 git push
 ```
 
 Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
+
+![push](images/push.png)
+
+[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)
+
+!SUB
+### Merge requests
+
+![merge request](images/merge-request.png)
+
