@@ -82,6 +82,34 @@ git status
 ```
 
 !SUB
+### .gitignore
+
+* zawiera listę plików z katalogu roboczego, które będą ignorowane przy wykonywaniu `git add` czy `git status`
+* `.gitignore` jest dodawany do katalogu roboczego i traktowany jak każdy inny plik, tj. podlega śledzeniu zmian; należy więc dodać go do commitu (najlepiej na samym początku pracy z projektem)
+
+```
+# no .a files
+*.a
+
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+
+# only ignore the root TODO file, not subdir/TODO
+/TODO
+
+# ignore all files in the build/ directory
+build/
+
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+
+# ignore all .txt files in the doc/ directory
+doc/**/*.txt
+```
+
+Przykładowe pliki .gitignore: https://github.com/github/gitignore
+
+!SUB
 ### Zapisujemy zmiany
 
 _**git commit**_ - zapisujemy zmiany:
