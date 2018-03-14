@@ -64,6 +64,7 @@ cat << EOF > hello_world.py
 print("Hello World")
 EOF
 touch pusty.txt
+touch full.txt
 ```
 
 _**git status**_ - sprawdzamy aktualny stan naszego repozytorium:
@@ -78,6 +79,7 @@ _**git add**_ - dodajmy nowe pliki do *indeksu*:
 git add README.md
 git add hello_world.py
 git add pusty.txt
+git add full.txt
 git status
 ```
 
@@ -239,7 +241,7 @@ _**git rm**_ - Usuwa pliki z katalogu roboczego i/lub indeksu
 
 Usuń plik i przygotuj tą zmianę do commit-u
 ```
-git rm pusty.txt
+git rm full.txt
 ```
 
 Usuń plik z indeksu ale pozostaw kopię w katalogu roboczym
@@ -250,13 +252,13 @@ git rm --cached test.txt
 Zmiana nazwy pliku:
 
 ```
-git mv test2.txt nowy.txt
+git mv pusty.txt nowy.txt
 ```
 
 albo
 
 ```
-mv test2.txt nowy.txt
+mv pusty.txt nowy.txt
 git add nowy.txt
-git rm test2.txt
+git rm pusty.txt
 ```
