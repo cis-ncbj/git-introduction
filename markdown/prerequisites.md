@@ -11,11 +11,24 @@ git --version
 ```
 
 * Przykłady testowane były z git-em 2.13
-* Na klastrze dostępny jako moduł
+
+**UWAGA**
+* Jeśli to możliwe pracujemy lokalnie
+* Dla osób bez git-a możliwa jest praca na klastrze:
 
 ```
+ssh <login>@usrint.cis.gov.pl
 module load git/2.13.0
 ```
+
+!SUB
+### VPN
+
+Będziemy pracować z serwisem https://code.cis.gov.pl
+
+Do połączenia wymagane jest zestawienie połączenia VPN:
+* Uruchamiamy klienta OpenVPN
+* Sprawdzamy czy możemy się zalogować na https://code.cis.gov.pl
 
 !SUB
 ### Garść uwag

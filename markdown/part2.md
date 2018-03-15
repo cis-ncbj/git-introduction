@@ -113,6 +113,70 @@ Po wykonaniu merge otrzymujemy liniową historię
 
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
+
+!SUB
+### Testujmy merge i rebase
+
+Przygotujemy dwie nowe gałęzie *master_rebase* i *master_merge* do testów:
+* master pozostaje bez zmian
+* master_rebase i master_merge będą symulować zmiany dokonane w gałęzi master
+* na master_rebase wykonamy rebase
+* na master_merge wykonamy merge
+
+```
+git checkout master
+
+git checkout -b master_rebase
+echo "TO JEST NOWY PLIK" >> nowy_plik.txt
+git commit -a
+
+git chekout -b master_merge
+gitk --all
+```
+
+!SUB
+### Fast forward
+
+**Fast Forward** występuje wtedy gdy zmiany z gałęzi możemy *czysto* nałożyć na aktualną.
+
+Będąc w gałęzi master wykonujemy *merge* zmian z gałęzi feature
+
+```
+git checkout master
+git merge feature
+gitk --all
+```
+
+!SUB
+### Merge
+
+Będąc w gałęzi **master_merge** wykonujemy *merge* zmian z gałęzi **feature**
+
+```
+git checkout master_merge
+git merge feature
+gitk --all
+```
+
+!SUB
+### Rebase
+
+Będąc w gałęzi **feature** wykonujemy *rebase* zmian z gałęzi **master_rebase**
+
+```
+git checkout feature
+git rebase master_rebase
+gitk --all
+```
+
+Będąc w gałęzi **master_rebase** wykonujemy *merge* zmian z gałęzi **feature**
+
+```
+git checkout master_rebase
+git merge feature
+gitk --all
+```
+
 !SUB
 ### Git - przepisywanie historii
 
@@ -133,61 +197,3 @@ _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 ![cherry pick](images/cherry-pick.png)
 
 <small>[*plasticscm.com](https://www.plasticscm.com/documentation/advanced-version-control-guide.html#cherry-pick)</small>
-
-!SUB
-### Testujmy merge i rebase
-
-Przygotujemy gałęzie *master_rebase* i *master_merge* do testów:
-* master pozostaje bez zmian
-* na master_rebase wykonamy rebase
-* na master_merge wykonamy merge
-
-```
-git checkout master
-git checkout -b master_rebase
-echo "Zmiana w master" >> README.md
-git commit -a
-git chekout -b master_merge
-gitk --all
-```
-
-!SUB
-### Fast forward
-
-Będąc w gałęzi master wykonujemy *merge* zmian z gałęzi feature
-
-```
-git chekout master
-git merge feature
-gitk --all
-```
-
-!SUB
-### Merge
-
-Będąc w gałęzi master_merge wykonujemy *merge* zmian z gałęzi feature
-
-```
-git checkout master_merge
-git merge feature
-gitk --all
-```
-
-!SUB
-### Rebase
-
-Będąc w gałęzi feature wykonujemy *rebase* zmian z gałęzi master_rebase
-
-```
-git checkout feature
-git rebase master_rebase
-gitk --all
-```
-
-Będąc w gałęzi master_rebase wykonujemy *merge* zmian z gałęzi feature
-
-```
-git checkout master_rebase
-git merge feature
-gitk --all
-```

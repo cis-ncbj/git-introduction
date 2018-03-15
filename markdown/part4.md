@@ -38,13 +38,63 @@ Najwygodniejszą metodą logowania do zdalnych repozytorii są klucze SSH
 
 Przykład dla usrint.cis.gov.pl
 
+* Generujemy nową parę kluczy - należy zdefiniowac hasło:
 ```
 ssh-keygen -f ~/.ssh/id_rsa_code
+```
+
+* Używamy naszych kluczy
+```
 eval $(ssh-agent)
 ssh-add ~/.ssh/id_rsa_code
 ```
 
+* Wyświetlamy klucz publiczny
+```
+cat ~/.ssh/id_rsa_code.pub
+# albo
+ssh-add -L
+```
+
+!SUB
+### Dodajemy klucz publiczny SSH do code.cis.gov.pl
+
 ![ssh](images/ssh.png)
+
+Testujemy:
+```
+ssh git@code.cis.gov.pl
+```
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC start](images/vsc-start.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC git extensions](images/vsc-plugins.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC init](images/vsc-init.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC commands](images/vsc-git-commands.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC commands](images/vsc-ignore.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC commands](images/vsc-history.png)
 
 !SUB
 ### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
@@ -166,8 +216,9 @@ git pull --rebase upstream master
 !SUB
 ### Feature branch
 
-Przygotowujemy środowisko
+Przygotowujemy środowisko - ładujemy anaconda
 
+Przykład dla linux-a i miniconda:
 ```
 . ~/miniconda3/bin/activate
 conda create --name <myenv>

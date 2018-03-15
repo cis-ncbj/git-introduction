@@ -25,16 +25,53 @@ Literatura:
 * https://www.atlassian.com/git/tutorials
 
 !SUB
+### Konfiguracja
+
+Git wymaga aby zdefiniować kim jesteśmy - wszystkie zmiany mają konkretnego autora ;)
+
+* globalną konfigurację (dla wszystkich repozytoriów na danej maszynie) można zmienić poleceniami:
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
+* lub edytując plik `~/.gitconfig`
+
+* konfigurację globalną sprawdzamy poleceniem:
+
+```
+git config --global --list
+```
+
+* lokalną konfigurację (dla danego repozytorium) można zmienić poleceniami:
+
+```
+git config user.name "Your Name"
+git config user.email "you@example.com"
+```
+
+* lub edytując plik `.git/config` w danym repozytorium
+
+* konfigurację lokalną sprawdzamy poleceniem:
+
+```
+git config --local --list
+```
+
+!SUB
 ### Nowe repozytorium
 _**git init**_ - inicjalizacja repozytorium
 
 W bieżacym katalogu:
 
 ```bash
+mkdir git_ex1
+cd git_ex1
 git init
 ```
 
-W katalogu o zadanej nazwie:
+Lub w katalogu o zadanej nazwie:
 
 ```bash
 git init git_ex1
@@ -42,6 +79,10 @@ cd git_ex1
 ```
 
 Powinien pojawić się nowy ukryty katalog `.git`, który zawiera lokalne repozytorium (*local repository*) naszego kodu.
+
+```
+ls -a
+```
 
 !SUB
 ### Trójpolówka ;)
@@ -55,14 +96,12 @@ Powinien pojawić się nowy ukryty katalog `.git`, który zawiera lokalne repozy
 Posłużymy się przykładem "Hello World" w python.
 
 ```bash
-cat << EOF > README.md
-# Hello World
-Przykład wykorzystania print w python3
-EOF
-cat << EOF > hello_world.py
-#!/usr/bin/env python3
-print("Hello World")
-EOF
+echo "# Hello World" > README.md
+echo "Przykład wykorzystania print w python3" >> README.md
+
+echo "#!/usr/bin/env python3" > hello_world.py
+echo "print("Hello World")" >> hello_world.py
+
 touch pusty.txt
 touch full.txt
 ```
@@ -146,17 +185,22 @@ Dodajemy nowe pliki i modyfikujemy stare:
 ```bash
 touch test.txt
 touch test2.txt
+
 echo "Nowa linia" >> README.md
 echo "print(\"HELLO2\")" >> hello_world.py
 echo "Nie pusty" >> pusty.txt
+
+git status
 ```
 
-Dodajemy zmiany do indeksu:
+Dodajemy wybrane zmiany do indeksu:
 
 ```bash
 git add README.md
 git add hello_world.py
 git add test.txt
+
+git status
 ```
 
 Wprowadzamy kolejne modyfikacje:
@@ -168,7 +212,7 @@ echo "Nowa linia 2" >> README.md
 Sprawdzamy status:
 
 ````
-git status -s
+git status
 ```
 
 !SUB
@@ -192,26 +236,6 @@ M  hello_world.py  #<2>
   * <3> - plik zawiera zmiany zarówno w katalogu roboczym jak i indeksie (został zmodyfikowany, dodany do indeksu, a potem zmodyfikowany ponownie)
 
 !SUB
-### Co właściwie się zmieniło?
-
-_**git diff**_ - narzędzie do prównywania wersji
-
-Zmiany w katalogu roboczym
-```
-git diff
-```
-
-Zmiany czekające w *indeksie*
-```
-git diff --cached
-```
-
-Zmiany pomiędzy wersjami
-```
-git diff <hash commit-u A> <hash commit-u B>
-```
-
-!SUB
 ### Historia zmian
 
 _**git log**_ - Wypisuje znane commity
@@ -232,6 +256,26 @@ Historia zmian do wybranego commit-u
 
 ```
 git log <hash commit-u>
+```
+
+!SUB
+### Co właściwie się zmieniło?
+
+_**git diff**_ - narzędzie do prównywania wersji
+
+Zmiany w katalogu roboczym
+```
+git diff
+```
+
+Zmiany czekające w *indeksie*
+```
+git diff --cached
+```
+
+Zmiany pomiędzy wersjami
+```
+git diff <hash commit-u A> <hash commit-u B>
 ```
 
 !SUB
