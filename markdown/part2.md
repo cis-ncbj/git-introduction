@@ -12,11 +12,13 @@
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
 !SUB
-### Zadanie
-
-Dodać do naszego repozytorium program generujący tablicę liczb losowych o 100 elementach i wypisujących ich na konsolę.
+### Zadanie 8 [4]
 
 Ponieważ dodajemy do programu kompletnie nowe funkcjonalności, dobrze jest w tym momencie utworzyć nowy branch, w którym będziemy dokonywali zmian niezależnie od mastera.
+
+!SUB
+### Nowa gałąź
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git checkout**_ - zmienia stan katalogu roboczego na wybraną gałąź
 
@@ -29,29 +31,36 @@ git status
 ```
 
 !SUB
-### Zadanie
+### Nowa gałąź
 
-**random_array.py**
+![VSC_branch](images/vscode-git-branch1.png)
+![VSC_branch](images/vscode-git-branch2.png)
+
+!SUB
+### Zadanie 8 [4]
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+**Rozwiązujemy zadanie 8 [4]**
+
+!SUB
+### Zapisujemy zmiany
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 ```
-#!/usr/bin/env python3
-
-import numpy
-
-random_array = numpy.random.uniform(-1, 1, size=100)
-print(random_array)
-```
-
-Commit
-
-```
-git add random_array.py
+git add vects_from_file.py
 git commit
 git status
 ```
 
 !SUB
+### Zapisujemy zmiany
+
+![VSC_branch](images/vscode-git-add.png)
+![VSC_branch](images/vscode-commit.png)
+
+!SUB
 ### Praca z gałęziami
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 ```
 git status
@@ -61,6 +70,33 @@ git status
 ls
 git diff feature
 ```
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-history.png)
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff1.png)
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff2.png)
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff3.png)
+
+!SUB
+### Zadania 9 - 13 [5,6,7 - master]
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+* Zadanie 9 - 11 rozwiązujemy w gałęzi **feature**
+* Zadanie 12 - 13 rozwiązujemy w gałęzi **master**
 
 !SUB
 ### Git - Merge vs Rebase

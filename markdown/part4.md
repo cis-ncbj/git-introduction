@@ -32,35 +32,16 @@ Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy d
 Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
 
 !SUB
-### Visual Studio Code + Git
-
-![VSC init](images/vsc-init.png)
-
-!SUB
-### Visual Studio Code + Git
-
-![VSC commands](images/vsc-git-commands.png)
-
-!SUB
-### Visual Studio Code + Git
-
-![VSC commands](images/vsc-ignore.png)
-
-!SUB
-### Visual Studio Code + Git
-
-![VSC commands](images/vsc-history.png)
-
-!SUB
 ### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
 
 ![new repo](images/gitlab-new-repo.png)
 
 !SUB
-### Wrzucamy testowe repozytorium na [code.cis.gov.pl](https://code.cis.gov.pl)
+### Wrzucamy repozytorium z ćwiczeniami [code.cis.gov.pl](https://code.cis.gov.pl)
 
 - Commit zmian
 - Dołączamy zdalne repozytorium zgodnie z podpowiedzią GitLab
+- Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
 
 ```
 git remote add origin git@code.cis.gov.pl:<user>/git_ex1.git
@@ -70,6 +51,35 @@ git push -u origin master
 
 - Oglądamy nasze commit-y na [code.cis.gov.pl](https://code.cis.gov.pl)
 
+!SUB
+### Wysyłanie zmian
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+_**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
+
+```
+git push
+```
+
+Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
+
+![push](images/push.png)
+
+<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
+
+!SUB
+### Wysyłamy nową gałąź
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+```
+git checkout feature
+git push -u origin feature
+```
+
+!SUB
+### Wysyłamy nową gałąź
+
+![VSC new repo](images/vscode-branch-push.png)
 
 !SUB
 ### Widelce
@@ -200,21 +210,6 @@ Commit zmian
 git add <my_notebook>.ipynb
 git commit
 ```
-
-!SUB
-### Wysyłanie zmian
-
-_**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
-
-```
-git push
-```
-
-Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
-
-![push](images/push.png)
-
-<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
 
 !SUB
 ### Merge requests

@@ -41,7 +41,7 @@ projekt_v3/
 
 !SUB
 ### Ad hoc - Inne
-![USB VCS](images/vcs-usb.png)
+![USB VCS](images/vcs-usb.png)<!-- .element width="100%" -->
 
 <small>[*eeweb.com](http://eeweb.com)</small>
 

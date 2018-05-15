@@ -114,9 +114,6 @@ ls -a
 
 !SUB
 ### Dodawanie plików do repozytorium
-
-!SUB
-### Dodawanie plików do repozytorium
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 Dodajmy do repozytorium plik *main.py* utworzony na potrzeby ćwiczenia 1.
@@ -215,13 +212,17 @@ git commit -a -m "<Commit message>"
 
 !SUB
 ### Visual Studio Code + Git
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 ![VSC commands](images/vsc-git-commands.png)
 
 !SUB
 ### Praca z kodem
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
 ** Powracamy do ćwiczeń python **
+
+*Rozwiązujemy jedno zadanie*
 
 !SUB
 ### Dodajemy zmiany do repozytorium
@@ -327,7 +328,7 @@ git diff <hash commit-u A> <hash commit-u B>
 
 !SUB
 ### Operacje na plikach
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 _**git rm**_ - Usuwa pliki z katalogu roboczego i/lub indeksu
 
@@ -354,3 +355,12 @@ mv pusty.txt nowy.txt
 git add nowy.txt
 git rm pusty.txt
 ```
+
+!SUB
+### Zadania 1 - 7
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+** Powracamy do ćwiczeń python **
+
+* Każde rozwiązane zadanie to nowy _**commit**_
+
