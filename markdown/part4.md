@@ -32,51 +32,6 @@ Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy d
 Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
 
 !SUB
-### Klucze SSH
-
-Najwygodniejszą metodą logowania do zdalnych repozytorii są klucze SSH
-
-Przykład dla usrint.cis.gov.pl
-
-* Generujemy nową parę kluczy - należy zdefiniowac hasło:
-```
-ssh-keygen -f ~/.ssh/id_rsa_code
-```
-
-* Używamy naszych kluczy
-```
-eval $(ssh-agent)
-ssh-add ~/.ssh/id_rsa_code
-```
-
-* Wyświetlamy klucz publiczny
-```
-cat ~/.ssh/id_rsa_code.pub
-# albo
-ssh-add -L
-```
-
-!SUB
-### Dodajemy klucz publiczny SSH do code.cis.gov.pl
-
-![ssh](images/ssh.png)
-
-Testujemy:
-```
-ssh git@code.cis.gov.pl
-```
-
-!SUB
-### Visual Studio Code + Git
-
-![VSC start](images/vsc-start.png)
-
-!SUB
-### Visual Studio Code + Git
-
-![VSC git extensions](images/vsc-plugins.png)
-
-!SUB
 ### Visual Studio Code + Git
 
 ![VSC init](images/vsc-init.png)

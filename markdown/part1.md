@@ -44,7 +44,12 @@ git config --global user.email "you@example.com"
 git config --global --list
 ```
 
-* lokalną konfigurację (dla danego repozytorium) można zmienić poleceniami:
+
+!SUB
+### Konfiguracja repozytorium
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+Lokalną konfigurację (dla danego repozytorium) można zmienić poleceniami:
 
 ```
 git config user.name "Your Name"
@@ -60,22 +65,34 @@ git config --local --list
 ```
 
 !SUB
+### Otwieramy projekt
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+```bash
+cd working_area
+```
+
+!SUB
+### Otwieramy projekt (workspace)
+
+![VSC start](images/vscode-workspace-start.png)
+
+!SUB
 ### Nowe repozytorium
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 _**git init**_ - inicjalizacja repozytorium
 
 W bieżacym katalogu:
 
 ```bash
-mkdir git_ex1
-cd git_ex1
 git init
 ```
 
-Lub w katalogu o zadanej nazwie:
+Lub inicjujemy **oraz** tworzymy katalog jednocześnie:
 
 ```bash
-git init git_ex1
-cd git_ex1
+git init second_project
+cd second_project
 ```
 
 Powinien pojawić się nowy ukryty katalog `.git`, który zawiera lokalne repozytorium (*local repository*) naszego kodu.
@@ -83,6 +100,11 @@ Powinien pojawić się nowy ukryty katalog `.git`, który zawiera lokalne repozy
 ```
 ls -a
 ```
+
+!SUB
+### Nowe repozytorium
+
+![VSC start](images/vsc-init.png)
 
 !SUB
 ### Trójpolówka ;)
@@ -93,18 +115,11 @@ ls -a
 !SUB
 ### Dodawanie plików do repozytorium
 
-Posłużymy się przykładem "Hello World" w python.
+!SUB
+### Dodawanie plików do repozytorium
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-```bash
-echo "# Hello World" > README.md
-echo "Przykład wykorzystania print w python3" >> README.md
-
-echo "#!/usr/bin/env python3" > hello_world.py
-echo "print("Hello World")" >> hello_world.py
-
-touch pusty.txt
-touch full.txt
-```
+Dodajmy do repozytorium plik *main.py* utworzony na potrzeby ćwiczenia 1.
 
 _**git status**_ - sprawdzamy aktualny stan naszego repozytorium:
 
@@ -115,15 +130,25 @@ git status
 _**git add**_ - dodajmy nowe pliki do *indeksu*:
 
 ```bash
-git add README.md
-git add hello_world.py
-git add pusty.txt
-git add full.txt
+git add main.py
 git status
 ```
 
+Możemy dodać wiele plików:
+
+```bash
+git add *.py
+```
+
+!SUB
+### Dodawanie plików do repozytorium
+
+![VSC commands](images/vscode-git-add.png)
+![VSC commands](images/vscode-git-add-all.png)
+
 !SUB
 ### .gitignore
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 * zawiera listę plików z katalogu roboczego, które będą ignorowane przy wykonywaniu `git add` czy `git status`
 * `.gitignore` jest dodawany do katalogu roboczego i traktowany jak każdy inny plik, tj. podlega śledzeniu zmian; należy więc dodać go do commitu (najlepiej na samym początku pracy z projektem)
@@ -151,7 +176,13 @@ doc/**/*.txt
 Przykładowe pliki .gitignore: https://github.com/github/gitignore
 
 !SUB
+### .gitignore
+
+![VSC commands](images/vscode-gitignore.png)
+
+!SUB
 ### Zapisujemy zmiany
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git commit**_ - zapisujemy zmiany:
 
@@ -178,65 +209,70 @@ git commit -a -m "<Commit message>"
   * dobrze opisane
 
 !SUB
+### Zapisujemy zmiany
+
+![VSC commands](images/vscode-commit.png)
+
+!SUB
+### Visual Studio Code + Git
+
+![VSC commands](images/vsc-git-commands.png)
+
+!SUB
 ### Praca z kodem
 
-Dodajemy nowe pliki i modyfikujemy stare:
+** Powracamy do ćwiczeń python **
 
-```bash
-touch test.txt
-touch test2.txt
-
-echo "Nowa linia" >> README.md
-echo "print(\"HELLO2\")" >> hello_world.py
-echo "Nie pusty" >> pusty.txt
-
-git status
-```
+!SUB
+### Dodajemy zmiany do repozytorium
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 Dodajemy wybrane zmiany do indeksu:
 
 ```bash
-git add README.md
-git add hello_world.py
-git add test.txt
-
 git status
-```
 
-Wprowadzamy kolejne modyfikacje:
+git add README.md
+git add main.py
+git add data.txt
 
-```
-echo "Nowa linia 2" >> README.md
-```
-
-Sprawdzamy status:
-
-````
 git status
 ```
 
 !SUB
+### Dodawanie plików do repozytorium
+
+![VSC commands](images/vscode-git-add.png)
+
+!SUB
 ### git status
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 Przykład repozytorium z plikami w różnym stanie
 ```bash
 $ git status -s
-MM README.md       #<3>
-M  hello_world.py  #<2>
- M pusty.txt       #<1>
- A  test.txt
- ?? test2.txt
+MM README.md        #<3>
+A  data.txt         #<2>
+ M main.py          #<1>
+ ?? test.txt
 ```
 * `??` - plik nie jest śledzony, ale znajduje się w katalogu roboczym
 * `A` - nowy plik został dodany do indeksu
 * `M` - zawartość śledzonego pliku została zmodyfikowana
-* pierwsze dwie kolumny określają stan danego pliku z punktu widzenia katalogu roboczego i indeksu
+* pierwsza kolumna określa stan pliku w indeksie
+* druga kolumna określa stan pliku w katalogu roboczym
   * <1> - plik został zmodyfikowany w katalogu roboczym
-  * <2> - plik został dodany do indeksu i zmodyfikowany
+  * <2> - plik został dodany do indeksu
   * <3> - plik zawiera zmiany zarówno w katalogu roboczym jak i indeksie (został zmodyfikowany, dodany do indeksu, a potem zmodyfikowany ponownie)
 
 !SUB
+### git status
+
+![VSC status](images/vscode-git-status.png)
+
+!SUB
 ### Historia zmian
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git log**_ - Wypisuje znane commity
 
@@ -259,7 +295,13 @@ git log <hash commit-u>
 ```
 
 !SUB
+### Historia zmian
+
+![VSC history](images/vscode-git-history.png)
+
+!SUB
 ### Co właściwie się zmieniło?
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git diff**_ - narzędzie do prównywania wersji
 
@@ -279,7 +321,13 @@ git diff <hash commit-u A> <hash commit-u B>
 ```
 
 !SUB
+### Co włąściwie się zmieniło?
+
+![VSC diff](images/vscode-git-diff.png)
+
+!SUB
 ### Operacje na plikach
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git rm**_ - Usuwa pliki z katalogu roboczego i/lub indeksu
 
