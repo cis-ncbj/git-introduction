@@ -1,64 +1,141 @@
-# Automatyzacja
-![rabbit](images/automatization.jpg)<!-- .element width="80%" -->
-## Szanuj swój czas ;)
+# Hands on Lab 4
+![remote](images/Remote.jpg)
+
+<small>[*mjms.net](http://www.mjms.net/blog/5-tips-for-managing-remote-workers/)</small>
+## Praca zespołowa
 
 !SUB
-### Continous Integration
+### Widelce
 
-#### Best practices
+[data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
 
-* Maintain a code repository
-* Automate the build
-* Make the build self-testing
-* Everyone commits to the baseline every day
-* Every commit (to baseline) should be built
-* Keep the build fast
-* Test in a clone of the production environment
-* Make it easy to get the latest deliverables
-* Everyone can see the results of the latest build
-* Automate deployment
+![github fork](images/github-fork.gif)
+
+<small>[*github.com/diy](https://github.com/diy/open-sourcerer/blob/master/script.md)</small>
 
 !SUB
-### CI
+### Klonowanie
 
-![jenkins](images/jenkins.png)<!-- .element width="5%" -->
+_**git clone**_ - Klonuje / tworzy kopię zdalnego repozytorium lokalnie
 
-https://jenkins.io
+Klonowanie istniejącego repozytorium (SSH):
 
-![travis](images/TravisCI-Full-Color.png)<!-- .element width="20%" -->
+```
+git clone git@code.cis.gov.pl:<username>/data-science-ipython-notebooks.git
+```
 
-https://travis-ci.org
+Klonowanie istniejącego repozytorium (HTTPS):
 
-![circleci](images/circleci.png)<!-- .element width="10%" -->
+```
+git clone https://code.cis.gov.pl/<username>/data-science-ipython-notebooks.git
+```
 
-https://circleci.com
+Klonowanie istniejącego lokalnego repozytorium:
 
-!SUB
-### Testery kodu
-
-![codacy](images/codacy.png)<!-- .element width="10%" -->
-
-https://www.codacy.com/
-
-![coveralls](images/coveralls.png)<!-- .element width="25%" -->
-
-https://coveralls.io/
-
-![snyk](images/snyk.png)<!-- .element width="8%" -->
-
-https://snyk.io/
+```
+git clone file:///home/mkarpiarz/git/gitdemo.git
+```
 
 !SUB
-### Przykłady
+### Śledzenie
 
-* https://github.com/tensorflow/tensorflow
-* https://github.com/flutter/flutter
-* https://github.com/facebook/react
+Git pozwala na śledzenie zdalnych repozytoriów:
 
+```
+git remote --help
+```
+
+Podczas operacji `clone` domyślnie dodawane jest zdalne repozytorium `origin`
+
+```
+cd data-science-ipython-notebooks
+git remote -v
+```
 
 !SUB
-### Przykłady 2
+### Śledzenie *upstream*
 
-* https://github.com/UCL/STIR/pull/108
-* https://github.com/ansible/ansible/pull/37371
+Możemy śledzić dowolną liczbę zadalnych repozytoriów
+
+```
+git remote add upstream \
+  git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks
+git fetch upstream
+git remote
+git branch -a
+```
+
+![forks](images/forks.png)
+
+!SUB
+### Pobieranie zmian
+
+_**git pull**_ - Pobiera zdalne zmiany i integruje je z lokalnym repozytorium
+
+```bash
+git pull          # git fetch + git merge
+git pull --rebase # git fetch + git rebase
+```
+
+* W rzeczywistości synchronizacja z zdalnym repozytorium przebiega dwu etapowo:
+  * Pobieramy aktualny stan zdalnego repozytorium: _**git fetch**_
+  * Dołączamy zmiany do lokalnej gałęzi: `git merge` lub `git rebase
+
+![pull](images/pull.jpg)
+
+<small>[*stackexchange](https://physics.stackexchange.com/questions/133614/the-best-way-in-which-a-man-can-pull-a-train)</small>
+
+!SUB
+### Pobieranie zmian z *upstream*
+
+- Należy zadbać aby wszystkie nasze zmiany były z-commit-owane
+- Pobieramy zmiany z repozytorium *upstream* z gałęzi *master*
+
+```bash
+git pull upstream master
+```
+
+- Często lepszym rozwiązaniem jest *rebase*
+
+```bash
+git pull --rebase upstream master
+```
+
+!SUB
+### Feature branch
+
+Przygotowujemy środowisko - ładujemy anaconda
+
+Przykład dla linux-a i miniconda:
+```
+. ~/miniconda3/bin/activate
+conda create --name <myenv>
+source activate <myenv>
+conda install matplotlib pandas scipy statmodels seaborn scikit-learn
+```
+
+Tworzymy gałąź na poprawki które przygotowujemy do włączenia do *upstream*
+
+```bash
+git checkout -b excercise
+```
+
+Uruchamiamy notebook-a
+
+```
+cd <matplotlib|numpy|pandas|scikit-learn|scipy>
+jupyter notebook
+```
+
+Commit zmian
+
+```
+git add <my_notebook>.ipynb
+git commit
+```
+
+!SUB
+### Merge requests
+
+![merge request](images/merge-request.png)
 

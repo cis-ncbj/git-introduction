@@ -1,137 +1,64 @@
-# Hands on Lab 5
-![rabbit](images/rabbit.png)<!-- .element width="25%" -->
-
-<small>[yandex.ru](https://fotki.yandex.ru/next/users/tatyana2q8-medvedeva/album/129793/view/276799)</small>
-## Sztuczki git
+# Automatyzacja
+![rabbit](images/automatization.jpg)<!-- .element width="80%" -->
+## Szanuj swój czas ;)
 
 !SUB
-### Git - zwaliłem ostatni commit ;-(
-![facepalm](images/face-palm.jpg)<!-- .element width="70%" -->
+### Continous Integration
 
-<small>[*diy.despair.com](http://diy.despair.com)</small>
+#### Best practices
 
-!SUB
-### Git - zwaliłem ostatni commit ;-(
-
-_**git commit --ammend**_ zamienia ostatni commit na nowy
-
-* Ostatni commit jest wadliwy / Ma błędny komentarz
-  * Poprawiamy kod w lokalnym katalogu
-  * Zaznaczamy pliki do commitu (`git add`)
-  * Wrzucamy poprawkę do repozytorium: `git commit --ammend`
-
-Pozwala na prostą poprawkę / zmianę komentrza
+* Maintain a code repository
+* Automate the build
+* Make the build self-testing
+* Everyone commits to the baseline every day
+* Every commit (to baseline) should be built
+* Keep the build fast
+* Test in a clone of the production environment
+* Make it easy to get the latest deliverables
+* Everyone can see the results of the latest build
+* Automate deployment
 
 !SUB
-### Git - zwaliłem ostatni commit ;-(
+### CI
 
-![history](images/history01.svg)
+![jenkins](images/jenkins.png)<!-- .element width="5%" -->
 
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+https://jenkins.io
 
-!SUB
-### Git - zmiany w starszych commitach
+![travis](images/TravisCI-Full-Color.png)<!-- .element width="20%" -->
 
-_**git rebase --interactive**_ - pozwala na interaktywne wybieranie commitów oraz ich edycję
+https://travis-ci.org
 
-```
-git rebase --interactive <rodzic_commitu_z_błędem>
-```
+![circleci](images/circleci.png)<!-- .element width="10%" -->
 
-* Otwiera edytor -> Każda linia to jeden commit
-* Usunięcie linii usuwa commit
-* Możemy zmienić kolejność
-* Dla każdej linii zostanie wykonane polecenie:
-
-```
-Commands:
-p, pick = use commit
-r, reword = use commit, but edit the commit message
-e, edit = use commit, but stop for amending
-s, squash = use commit, but meld into previous commit
-f, fixup = like "squash", but discard this commit's log message
-x, exec = run command (the rest of the line) using shell
-```
+https://circleci.com
 
 !SUB
-### git stash
+### Testery kodu
 
-_**git stash**_ umożliwia zapisanie stanu katalogu roboczego (oraz stanu indeksu) na oddzielnym stosie nieukończonych zmian bez potrzeby dokonywania commitu
+![codacy](images/codacy.png)<!-- .element width="10%" -->
 
-* polecenie `git stash` jest przydatne jeśli zaistnieje potrzeba powrotu do któregoś z poprzednich commitów w trakcie pracy nad nowym.
+https://www.codacy.com/
 
-Zapisanie stanu katalogu roboczego:
-```bash
-git stash
-git stash list
-```
+![coveralls](images/coveralls.png)<!-- .element width="25%" -->
 
-Przywrócenie ostatniego stanu i usunięcie go ze stosu:
-```bash
-git stash pop
-```
+https://coveralls.io/
 
-Inne:
-```bash
-git stash apply stash@{2}  # przywrócenie stanu katalogu roboczego
-git stash drop stash@{0}  # usunięcie zapisanego stanu ze stosu
-git stash pop stash@{1}  # przywrócenie konkretnego stanu i usunięcie go ze stosu
-```
+![snyk](images/snyk.png)<!-- .element width="8%" -->
 
-<small>Komendy `git stash apply`, `git stash drop` i `git stash pop` wykonane bez określania konkretnego elementu stosu, będą działały na ostatnim dodanym elemencie</small>
+https://snyk.io/
 
 !SUB
-### Git - bugi
+### Przykłady
 
-_**git blame**_ - pokazuje kto zmienił każdą linijkę w pliku i kiedy
+* https://github.com/tensorflow/tensorflow
+* https://github.com/flutter/flutter
+* https://github.com/facebook/react
 
-_**git bisect**_ - wykorzystuje metodę bisekcji (na grafach) do wykrycia w którym miejscu po raz pierwszy pojawił się błąd
-
-!SUB
-### Git bisect
-
-Znamy ostatni dobry commit oraz commit gdzie objawia się błąd:
-
-![bisect1](images/bisect1.png)
-
-<small>[*paradigmadigital.com](https://www.paradigmadigital.com/dev/sacale-mas-partido-tus-proyectos-git/)
 
 !SUB
-### Git bisect
+### Przykłady 2
 
-Startujemy bisekcję:
-
-```
-git bisect start
-git bisect bad                 # Aktualna wersja jest zła
-git bisect good v2.6.13-rc2    # Wiemy że tag v2.6.13-rc2 jest dobry
-```
-_**git bisect**_ będzie checkout-ował kolejne commit-y z pomiędzy ostatniego dobrego i najstarszego złego starając się zminimalizować liczbę commitów do przejrzenia
-
-![bisect2](images/bisect2.png)
-
-<small>[*paradigmadigital.com](https://www.paradigmadigital.com/dev/sacale-mas-partido-tus-proyectos-git/)
-
-!SUB
-### Git bisect
-
-Po weryfikacji oznaczamy commit jako dobry lub zły
-
-```
-git bisect good  # Jeśli wersja jest dobra
-git bisect bad   # Jeśli wersja jest zła
-```
-
-![bisect3](images/bisect3.png)
-
-<small>[*paradigmadigital.com](https://www.paradigmadigital.com/dev/sacale-mas-partido-tus-proyectos-git/)
-
-!SUB
-### Git bisect
-
-W końcu docieramy do commit-u który wprowadził błąd do kodu
-
-![bisect3](images/bisect4.png)
-
-<small>[*paradigmadigital.com](https://www.paradigmadigital.com/dev/sacale-mas-partido-tus-proyectos-git/)
+* https://github.com/UCL/STIR/pull/108
+* https://github.com/ansible/ansible/pull/37371
 

@@ -1,112 +1,83 @@
-# Git workflows
-![teamwork](images/teamwork.jpg)<!-- .element width="40%" -->
+# Hands on Lab 3
+![remote](images/Remote.jpg)
 
-<small>[*pinterest.com](https://pl.pinterest.com/pin/139400550939304902/)
-## Praca zespołowa
-
-!SUB
-### Zespół jednoosobowy ;-)
-
-Pracuje samodzielnie nad projektem, po co mi Git?
-
-* Backup
-* Przenośność między maszynami
-* Prostota udostępnienia innym poprzez GitHub, GitLab etc.
+<small>[*mjms.net](http://www.mjms.net/blog/5-tips-for-managing-remote-workers/)</small>
+## Repozytoria zdalne
 
 !SUB
-### Forking Workflow
+### GitLab
 
-* Popularny wśród małych projektów na GitHub / BitBucket etc
-* Jeden maintainer głównego repozytorium
-* Każdy pracuje z własnym forkiem przesyłając pull requesty do maintainera
-* Ułatwia kontynuację projektu gdy oryginalny autor straci zainteresowanie
+[gitlab.com](https://gitlab.com)
 
-!SUB
-### Forking Workflow
+![gitlab](images/gitlab-logo.png)
 
-![fork workflow](images/fork_workflow01.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+GitLab to platforma pracy grupowej dostępna na licencji open source. Udostępnia zarządcę repozytoriów git, system ticketów, narzędzia do recenzji kodu i wiele więcej. Dostępny w 3 wersjach:
+ * GitLab CE: Community Edition - [code.cis.gov.pl](https://code.cis.gov.pl)
+ * GitLab EE: Enterprise Edition
+ * GitLab.com - darmowa dla małych projektów, udostępnia prywatne repozytoria
 
 !SUB
-### Forking Workflow
+### Inne platformy
 
-![fork workflow](images/fork_workflow02.svg)
+[github.com](https://github.com)
 
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+![github](images/Octocat.png)
 
-!SUB
-### Forking Workflow
+Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy dla projektów opensource.
 
-![fork workflow](images/fork_workflow03.svg)
+[bitbucket.org](https://bitbucket.org)
 
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+![bitbucket](images/bitbucket.png)
 
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow04.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
 
 !SUB
-### Forking Workflow
+### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
 
-![fork workflow](images/fork_workflow05.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+![new repo](images/gitlab-new-repo.png)
 
 !SUB
-### Forking Workflow
+### Wrzucamy repozytorium z ćwiczeniami [code.cis.gov.pl](https://code.cis.gov.pl)
 
-![fork workflow](images/fork_workflow06.svg)
+- Commit zmian
+- Dołączamy zdalne repozytorium zgodnie z podpowiedzią GitLab
+- Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
 
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+```
+git remote add origin git@code.cis.gov.pl:<user>/git_ex1.git
+git checkout master
+git push -u origin master
+```
 
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow07.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow08.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+- Oglądamy nasze commit-y na [code.cis.gov.pl](https://code.cis.gov.pl)
 
 !SUB
-### Feature branch workflow
+### Wysyłanie zmian
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-_**Każda**_ zmiana zaczyna się od utworzenia nowej gałęzi
+_**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
 
-![branch workflow](images/feature-branch.png)
+```
+git push
+```
 
-<small>[*buddy.works](https://buddy.works/blog/5-types-of-git-workflows)
+Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
 
-!SUB
-### Feature branch workflow
+![push](images/push.png)
 
-_**Każdy**_ merge poprzedzony jet merge/pull request-em i recenzją kodu
-
-![branch workflow](images/feature-workflow.png)
-
-<small>[*github.com](https://guides.github.com/introduction/flow/)
+<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
 
 !SUB
-### Gitflow Workflow
+### Wysyłamy nową gałąź
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-* Preferowany przez większe projekty
-* Zazwyczaj więcej osób ma uprawnienia do zapisu w głównym repozytorium
-* Kilka zdefiniowanych gałęzi odpowiada różnym stadiom rozwoju projektu
-* Bardzo często łączony z Forking Workflow
+```
+git checkout feature
+git push -u origin feature
+```
 
 !SUB
-### Gitflow Workflow
+### Wysyłamy nową gałąź
 
-![gitflow workflow](images/branch_workflow01.svg)<!-- .element width="80%" -->
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+![VSC new repo](images/vscode-branch-push.png)
 

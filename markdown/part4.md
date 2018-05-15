@@ -1,218 +1,112 @@
-# Hands on Lab 3
-![remote](images/Remote.jpg)
+# Git workflows
+![teamwork](images/teamwork.jpg)<!-- .element width="40%" -->
 
-<small>[*mjms.net](http://www.mjms.net/blog/5-tips-for-managing-remote-workers/)</small>
-## Repozytoria zdalne
-
-!SUB
-### GitLab
-
-[gitlab.com](https://gitlab.com)
-
-![gitlab](images/gitlab-logo.png)
-
-GitLab to platforma pracy grupowej dostępna na licencji open source. Udostępnia zarządcę repozytoriów git, system ticketów, narzędzia do recenzji kodu i wiele więcej. Dostępny w 3 wersjach:
- * GitLab CE: Community Edition - [code.cis.gov.pl](https://code.cis.gov.pl)
- * GitLab EE: Enterprise Edition
- * GitLab.com - darmowa dla małych projektów, udostępnia prywatne repozytoria
+<small>[*pinterest.com](https://pl.pinterest.com/pin/139400550939304902/)
+## Praca zespołowa
 
 !SUB
-### Inne platformy
+### Zespół jednoosobowy ;-)
 
-[github.com](https://github.com)
+Pracuje samodzielnie nad projektem, po co mi Git?
 
-![github](images/Octocat.png)
-
-Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy dla projektów opensource.
-
-[bitbucket.org](https://bitbucket.org)
-
-![bitbucket](images/bitbucket.png)
-
-Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
+* Backup
+* Przenośność między maszynami
+* Prostota udostępnienia innym poprzez GitHub, GitLab etc.
 
 !SUB
-### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
+### Forking Workflow
 
-![new repo](images/gitlab-new-repo.png)
-
-!SUB
-### Wrzucamy repozytorium z ćwiczeniami [code.cis.gov.pl](https://code.cis.gov.pl)
-
-- Commit zmian
-- Dołączamy zdalne repozytorium zgodnie z podpowiedzią GitLab
-- Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
-
-```
-git remote add origin git@code.cis.gov.pl:<user>/git_ex1.git
-git checkout master
-git push -u origin master
-```
-
-- Oglądamy nasze commit-y na [code.cis.gov.pl](https://code.cis.gov.pl)
+* Popularny wśród małych projektów na GitHub / BitBucket etc
+* Jeden maintainer głównego repozytorium
+* Każdy pracuje z własnym forkiem przesyłając pull requesty do maintainera
+* Ułatwia kontynuację projektu gdy oryginalny autor straci zainteresowanie
 
 !SUB
-### Wysyłanie zmian
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+### Forking Workflow
 
-_**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
+![fork workflow](images/fork_workflow01.svg)
 
-```
-git push
-```
-
-Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
-
-![push](images/push.png)
-
-<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Wysyłamy nową gałąź
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+### Forking Workflow
 
-```
-git checkout feature
-git push -u origin feature
-```
+![fork workflow](images/fork_workflow02.svg)
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Wysyłamy nową gałąź
+### Forking Workflow
 
-![VSC new repo](images/vscode-branch-push.png)
+![fork workflow](images/fork_workflow03.svg)
 
-!SUB
-### Widelce
-
-[data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
-
-![github fork](images/github-fork.gif)
-
-<small>[*github.com/diy](https://github.com/diy/open-sourcerer/blob/master/script.md)</small>
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Klonowanie
+### Forking Workflow
 
-_**git clone**_ - Klonuje / tworzy kopię zdalnego repozytorium lokalnie
+![fork workflow](images/fork_workflow04.svg)
 
-Klonowanie istniejącego repozytorium (SSH):
-
-```
-git clone git@code.cis.gov.pl:<username>/data-science-ipython-notebooks.git
-```
-
-Klonowanie istniejącego repozytorium (HTTPS):
-
-```
-git clone https://code.cis.gov.pl/<username>/data-science-ipython-notebooks.git
-```
-
-Klonowanie istniejącego lokalnego repozytorium:
-
-```
-git clone file:///home/mkarpiarz/git/gitdemo.git
-```
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Śledzenie
+### Forking Workflow
 
-Git pozwala na śledzenie zdalnych repozytoriów:
+![fork workflow](images/fork_workflow05.svg)
 
-```
-git remote --help
-```
-
-Podczas operacji `clone` domyślnie dodawane jest zdalne repozytorium `origin`
-
-```
-cd data-science-ipython-notebooks
-git remote -v
-```
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Śledzenie *upstream*
+### Forking Workflow
 
-Możemy śledzić dowolną liczbę zadalnych repozytoriów
+![fork workflow](images/fork_workflow06.svg)
 
-```
-git remote add upstream \
-  git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks
-git fetch upstream
-git remote
-git branch -a
-```
-
-![forks](images/forks.png)
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Pobieranie zmian
+### Forking Workflow
 
-_**git pull**_ - Pobiera zdalne zmiany i integruje je z lokalnym repozytorium
+![fork workflow](images/fork_workflow07.svg)
 
-```bash
-git pull          # git fetch + git merge
-git pull --rebase # git fetch + git rebase
-```
-
-* W rzeczywistości synchronizacja z zdalnym repozytorium przebiega dwu etapowo:
-  * Pobieramy aktualny stan zdalnego repozytorium: _**git fetch**_
-  * Dołączamy zmiany do lokalnej gałęzi: `git merge` lub `git rebase
-
-![pull](images/pull.jpg)
-
-<small>[*stackexchange](https://physics.stackexchange.com/questions/133614/the-best-way-in-which-a-man-can-pull-a-train)</small>
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Pobieranie zmian z *upstream*
+### Forking Workflow
 
-- Należy zadbać aby wszystkie nasze zmiany były z-commit-owane
-- Pobieramy zmiany z repozytorium *upstream* z gałęzi *master*
+![fork workflow](images/fork_workflow08.svg)
 
-```bash
-git pull upstream master
-```
-
-- Często lepszym rozwiązaniem jest *rebase*
-
-```bash
-git pull --rebase upstream master
-```
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
 !SUB
-### Feature branch
+### Feature branch workflow
 
-Przygotowujemy środowisko - ładujemy anaconda
+_**Każda**_ zmiana zaczyna się od utworzenia nowej gałęzi
 
-Przykład dla linux-a i miniconda:
-```
-. ~/miniconda3/bin/activate
-conda create --name <myenv>
-source activate <myenv>
-conda install matplotlib pandas scipy statmodels seaborn scikit-learn
-```
+![branch workflow](images/feature-branch.png)
 
-Tworzymy gałąź na poprawki które przygotowujemy do włączenia do *upstream*
-
-```bash
-git checkout -b excercise
-```
-
-Uruchamiamy notebook-a
-
-```
-cd <matplotlib|numpy|pandas|scikit-learn|scipy>
-jupyter notebook
-```
-
-Commit zmian
-
-```
-git add <my_notebook>.ipynb
-git commit
-```
+<small>[*buddy.works](https://buddy.works/blog/5-types-of-git-workflows)
 
 !SUB
-### Merge requests
+### Feature branch workflow
 
-![merge request](images/merge-request.png)
+_**Każdy**_ merge poprzedzony jet merge/pull request-em i recenzją kodu
+
+![branch workflow](images/feature-workflow.png)
+
+<small>[*github.com](https://guides.github.com/introduction/flow/)
+
+!SUB
+### Gitflow Workflow
+
+* Preferowany przez większe projekty
+* Zazwyczaj więcej osób ma uprawnienia do zapisu w głównym repozytorium
+* Kilka zdefiniowanych gałęzi odpowiada różnym stadiom rozwoju projektu
+* Bardzo często łączony z Forking Workflow
+
+!SUB
+### Gitflow Workflow
+
+![gitflow workflow](images/branch_workflow01.svg)<!-- .element width="80%" -->
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 
