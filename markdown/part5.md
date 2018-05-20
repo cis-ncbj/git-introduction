@@ -79,7 +79,7 @@ git pull --rebase # git fetch + git rebase
 
 * W rzeczywistości synchronizacja z zdalnym repozytorium przebiega dwu etapowo:
   * Pobieramy aktualny stan zdalnego repozytorium: _**git fetch**_
-  * Dołączamy zmiany do lokalnej gałęzi: `git merge` lub `git rebase
+  * Dołączamy zmiany do lokalnej gałęzi: `git merge` lub `git rebase`
 
 ![pull](images/pull.jpg)
 
@@ -108,10 +108,7 @@ Przygotowujemy środowisko - ładujemy anaconda
 
 Przykład dla linux-a i miniconda:
 ```
-. ~/miniconda3/bin/activate
-conda create --name <myenv>
-source activate <myenv>
-conda install matplotlib pandas scipy statmodels seaborn scikit-learn
+. ~/Anaconda3/bin/activate
 ```
 
 Tworzymy gałąź na poprawki które przygotowujemy do włączenia do *upstream*

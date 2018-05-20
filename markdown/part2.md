@@ -12,7 +12,7 @@
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
 !SUB
-### Zadanie 8 [4]
+### Zadanie 8
 
 Ponieważ dodajemy do programu kompletnie nowe funkcjonalności, dobrze jest w tym momencie utworzyć nowy branch, w którym będziemy dokonywali zmian niezależnie od mastera.
 
@@ -37,10 +37,10 @@ git status
 ![VSC_branch](images/vscode-git-branch2.png)
 
 !SUB
-### Zadanie 8 [4]
+### Zadanie 8
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-**Rozwiązujemy zadanie 8 [4]**
+**Rozwiązujemy zadanie 8**
 
 !SUB
 ### Zapisujemy zmiany
@@ -92,7 +92,7 @@ git diff feature
 ![VSC_branch](images/vscode-branch-diff3.png)
 
 !SUB
-### Zadania 9 - 13 [5,6,7 - master]
+### Zadania 9 - 13
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
 * Zadanie 9 - 11 rozwiązujemy w gałęzi **feature**
@@ -152,69 +152,123 @@ Po wykonaniu merge otrzymujemy liniową historię
 
 !SUB
 ### Testujmy merge i rebase
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-Przygotujemy dwie nowe gałęzie *master_rebase* i *master_merge* do testów:
-* master pozostaje bez zmian
-* master_rebase i master_merge będą symulować zmiany dokonane w gałęzi master
+Przygotujemy nowe gałęzie do testów:
+* *master_rebase*
+* *master_merge*
+* *feature_rebase*
+* *feature_merge*
+* master i feature pozostają bez zmian
 * na master_rebase wykonamy rebase
 * na master_merge wykonamy merge
 
 ```
 git checkout master
-
 git checkout -b master_rebase
-echo "TO JEST NOWY PLIK" >> nowy_plik.txt
-git commit -a
-
 git chekout -b master_merge
+git checkout feature
+git checkout -b feature_rebase
+git checkout -b feature_merge
+
 gitk --all
 ```
 
 !SUB
-### Fast forward
+### Testujmy merge i rebase
 
-**Fast Forward** występuje wtedy gdy zmiany z gałęzi możemy *czysto* nałożyć na aktualną.
+1. _checkout **master**_
+2. _new branch **master_rebase**_
+3. _new branch **master_merge**_
 
-Będąc w gałęzi master wykonujemy *merge* zmian z gałęzi feature
-
-```
-git checkout master
-git merge feature
-gitk --all
-```
+![VSC_branch](images/vscode-git-checkout-master.png)
+![VSC_branch](images/vscode-git-feature-new-branch.png)
 
 !SUB
-### Merge
+### Testujmy merge i rebase
 
-Będąc w gałęzi **master_merge** wykonujemy *merge* zmian z gałęzi **feature**
+1. _checkout **feature**_
+2. _new branch **feature_rebase**_
+3. _new branch **feature_merge**_
+
+![VSC_branch](images/vscode-git-checkout-feature.png)
+![VSC_branch](images/vscode-git-feature-new-branch.png)
+
+!SUB
+### Testujmy merge i rebase
+
+![VSC_branch](images/vscode-merge-test1.png)
+
+!SUB
+### Rebase
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+Będąc w gałęzi **feature_rebase** wykonujemy *rebase* zmian z gałęzi **master_rebase**
 
 ```
-git checkout master_merge
-git merge feature
+git checkout feature_rebase
+git rebase master_rebase
 gitk --all
 ```
 
 !SUB
 ### Rebase
 
-Będąc w gałęzi **feature** wykonujemy *rebase* zmian z gałęzi **master_rebase**
+![VSC_branch](images/vscode-rebase1.png)
+![VSC_branch](images/vscode-rebase2.png)
+![VSC_branch](images/vscode-rebase3.png)
+
+!SUB
+### Rebase
+
+![VSC_branch](images/vscode-rebase4.png)
+
+!SUB
+### Merge
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+Będąc w gałęzi **master_merge** wykonujemy *merge* zmian z gałęzi **feature_merge**
 
 ```
-git checkout feature
-git rebase master_rebase
-gitk --all
-```
-
-Będąc w gałęzi **master_rebase** wykonujemy *merge* zmian z gałęzi **feature**
-
-```
-git checkout master_rebase
-git merge feature
+git checkout master_merge
+git merge feature_merge
 gitk --all
 ```
 
 !SUB
+### Merge
+
+![VSC_branch](images/vscode-merge1.png)
+![VSC_branch](images/vscode-merge2.png)
+![VSC_branch](images/vscode-merge3.png)
+
+!SUB
+### Fast forward
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+**Fast Forward** występuje wtedy gdy zmiany z gałęzi możemy *czysto* nałożyć na aktualną.
+
+Będąc w gałęzi **master_rebase** wykonujemy *merge* zmian z gałęzi **feature_rebase**
+
+```
+git checkout master_rebase
+git merge feature_rebase
+gitk --all
+```
+
+!SUB
+### Fast forward
+
+1. _checkout **master_rebase**_
+2. _merge **feature_rebase**_
+
+!SUB
+### Testujmy merge i rebase
+![VSC_branch](images/vscode-merge-test2.png)
+
+!SUB
 ### Git - przepisywanie historii
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 * `git commit --amend` - umożliwia poprawienie ostatniego wysłanego commitu
 * `git rebase` i `git pull --rebase`
@@ -227,6 +281,7 @@ Dobrą zasadą jest nie podmienianie commitów wysłanych do publicznego repozyt
 
 !SUB
 ### Wybieranie wisienek
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 

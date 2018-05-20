@@ -56,7 +56,7 @@ x, exec = run command (the rest of the line) using shell
 !SUB
 ### git stash
 
-_**git stash**_ umożliwia zapisanie stanu katalogu roboczego (oraz stanu indeksu) na oddzielnym stosie nieukończonych zmian bez potrzeby dokonywania commitu
+_**git stash**_ zapis stanu katalogu roboczego (oraz stanu indeksu) w "schowku"
 
 * polecenie `git stash` jest przydatne jeśli zaistnieje potrzeba powrotu do któregoś z poprzednich commitów w trakcie pracy nad nowym.
 
