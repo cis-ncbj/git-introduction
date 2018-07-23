@@ -322,7 +322,7 @@ git diff <hash commit-u A> <hash commit-u B>
 ```
 
 !SUB
-### Co włąściwie się zmieniło?
+### Co właściwie się zmieniło?
 
 ![VSC diff](images/vscode-git-diff.png)
 
@@ -355,12 +355,3 @@ mv pusty.txt nowy.txt
 git add nowy.txt
 git rm pusty.txt
 ```
-
-!SUB
-### Zadania 1 - 7
-<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
-
-** Powracamy do ćwiczeń python **
-
-* Każde rozwiązane zadanie to nowy _**commit**_
-

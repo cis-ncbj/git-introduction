@@ -31,6 +31,7 @@ Pozwala na prostą poprawkę / zmianę komentrza
 
 !SUB
 ### Git - zmiany w starszych commitach
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 _**git rebase --interactive**_ - pozwala na interaktywne wybieranie commitów oraz ich edycję
 
@@ -51,6 +52,62 @@ e, edit = use commit, but stop for amending
 s, squash = use commit, but meld into previous commit
 f, fixup = like "squash", but discard this commit's log message
 x, exec = run command (the rest of the line) using shell
+```
+
+!SUB
+### Git - zmiany w starszych commitach
+
+Konfigurujemy git-a aby korzystał z VSC jako diff-tool dla aktualnego projektu:
+
+```
+git config core.editor "code --wait"
+git config -e
+```
+
+Dodajemy nowe sekcje w pliku konfiguracyjnym:
+
+```
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+```
+
+!SUB
+### Git - zmiany w starszych commitach
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+Możemy też zmienić globalną konfigurację git-a aby zawsze korzystał z VSC jako diff-tool:
+
+```
+git config --global core.editor "code --wait"
+git config --global -e
+```
+
+Dodajemy nowe sekcje w pliku konfiguracyjnym:
+
+```
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+```
+
+!SUB
+### Git - zmiany w starszych commitach
+
+Ćwiczenie - wyedytujmy 4 ostatnie commity:
+
+```
+git rebase --interactive HEAD~4
+```
+
+Przykładowe zmiany:
+```
+reword 9c58f7e Poprawki
+squash 91814c9 Poprawki 2
+edit dcc0216 Poprawka przekazywanie słownika
+pick 2b43748 Aktualizacja dokumentacji
 ```
 
 !SUB

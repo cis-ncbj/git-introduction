@@ -65,8 +65,6 @@ Do połączenia wymagane jest zestawienie połączenia VPN:
 
 Najwygodniejszą metodą logowania do zdalnych repozytorii są klucze SSH
 
-Przykład dla usrint.cis.gov.pl
-
 * Generujemy nową parę kluczy - należy zdefiniowac hasło:
 ```
 ssh-keygen -f ~/.ssh/id_rsa_code
@@ -95,10 +93,12 @@ Testujemy:
 ssh git@code.cis.gov.pl
 ```
 
+<!--
 !SUB
 ### Visual Studio Code + Git
 
 ![VSC start](images/vsc-start.png)
+-->
 
 !SUB
 ### Visual Studio Code + Git

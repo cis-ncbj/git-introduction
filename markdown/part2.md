@@ -1,4 +1,4 @@
-# Hands on Lab 3
+# Hands on Lab 2
 ![remote](images/Remote.jpg)
 
 <small>[*mjms.net](http://www.mjms.net/blog/5-tips-for-managing-remote-workers/)</small>
@@ -44,7 +44,7 @@ Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz ma
 - Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
 
 ```
-git remote add origin git@code.cis.gov.pl:<user>/git_ex1.git
+git remote add origin git@code.cis.gov.pl:<user>/git_hands_on.git
 git checkout master
 git push -u origin master
 ```
@@ -68,16 +68,126 @@ Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zd
 <small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
 
 !SUB
-### Wysyłamy nową gałąź
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+### Issues
 
-```
-git checkout feature
-git push -u origin feature
-```
+Gitlab posiada wbudowany system "zgłoszeń". Jego podstawowym zadaniem jest śledzenie zgłoszonych błędów.
+
+Sprawdza się jednak równie dobrze jako narzędzie do planowania nowych funkcjonalności czy notatnik.
+
+![gitlab_issues](images/gitlab-issues.png)
 
 !SUB
-### Wysyłamy nową gałąź
+### Labels
 
-![VSC new repo](images/vscode-branch-push.png)
+Nasze issues możemy grupować oznaczając je przy pomocy etykiet (labels):
+
+![gitlab_labels](images/gitlab-labels.png)
+
+!SUB
+### Issues
+
+Dla każdego z zadań do wykonania w dalszej części ćwiczeń zakładamy oddzielne Issue.
+
+Lista zadań: https://goo.gl/gn53av
+
+!SUB
+### Kamienie milowe
+
+Milestones pozwalają na grupowanie poszczególnych issues w powiązane grupy. Zyskujemy w ten sposób:
+
+- Łatwe narzędzie do ustalania priorytetów naszych zadań
+- Wygodną wizualizację postępów naszej pracy
+
+![gitlab_milestones](images/gitlab-milestones.png)
+
+!SUB
+### Markdown
+
+<pre>
+Nagłówek H1
+===========
+
+Nagłówek H2
+-----------
+
+### H3 - Lista numerowana
+
+1. Kursywa: *gwiazdki* lub _podkreślniki_.
+2. Wytłuszczenie: **gwiazdki** lub __podkreślinki__.
+3. Łączenie kursywy i wytłuszczenia **gwiazdki plus _podkreślniki_**.
+4. Przekreślenie: ~~Scratch this~~.
+
+### H3 - Lista nienumerowana
+
+* Lista nienumerowna wykorzystuje `*`, `-` lub `+`
+- http://www.ncbj.gov.pl
++ [Odnośnik z nazwą](https://www.ncbj.gov.pl)
+
+### H3 - Bloki kodu
+
+```python
+import sys
+print(int("123"))
+```
+</pre>
+
+!SUB
+### Markdown
+
+Nagłówek H1
+===========
+
+Nagłówek H2
+-----------
+
+### H3 - Lista numerowana
+
+1. Kursywa: *gwiazdki* lub _podkreślniki_.
+2. Wytłuszczenie: **gwiazdki** lub __podkreślinki__.
+3. Łączenie kursywy i wytłuszczenia **gwiazdki plus _podkreślniki_**.
+4. Przekreślenie: ~~Scratch this~~.
+
+!SUB
+### Markdown
+
+### H3 - Lista nienumerowana
+
+* Lista nienumerowna wykorzystuje `*`, `-` lub `+`
+- http://www.ncbj.gov.pl
++ [Odnośnik z nazwą](https://www.ncbj.gov.pl)
+
+### H3 - Bloki kodu
+
+<pre class="python"><code>import sys
+print(int("123"))
+</code></pre>
+
+!SUB
+### Gitlab Markdown
+
+Gitlab stosuje dodatkowy system odnośników:
+
+
+- `@foo` : użytkownik
+- `#123` : issue
+- `!123` : merge request
+- `$123` : snippet
+- `1234567` : commit
+- `[file](path/to/file)` : odnośnik do pliku
+
+!SUB
+### Odnośniki commit - issue
+
+![gitlab_commit_link](images/gitlab-commit-link.png)<!-- .element width="50%" -->
+![gitlab_issue_link](images/gitlab-issue-link.png)<!-- .element width="80%" -->
+
+
+!SUB
+### Zadania 1 - 6
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+** Powracamy do ćwiczeń python **
+
+* Każde rozwiązane zadanie to nowy _**commit**_
+* Nowe _**commit-y**_ wysyłamy do zdalnego repozytorium przy pomocy _**push**_
 
