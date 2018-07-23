@@ -1,83 +1,290 @@
-# Hands on Lab 3
-![remote](images/Remote.jpg)
+# Hands on Lab 2
+![repository](images/git-history.png)
 
-<small>[*mjms.net](http://www.mjms.net/blog/5-tips-for-managing-remote-workers/)</small>
-## Repozytoria zdalne
-
-!SUB
-### GitLab
-
-[gitlab.com](https://gitlab.com)
-
-![gitlab](images/gitlab-logo.png)
-
-GitLab to platforma pracy grupowej dostępna na licencji open source. Udostępnia zarządcę repozytoriów git, system ticketów, narzędzia do recenzji kodu i wiele więcej. Dostępny w 3 wersjach:
- * GitLab CE: Community Edition - [code.cis.gov.pl](https://code.cis.gov.pl)
- * GitLab EE: Enterprise Edition
- * GitLab.com - darmowa dla małych projektów, udostępnia prywatne repozytoria
+<small>[*medium.freecodecamp.org](https://medium.freecodecamp.org/understanding-git-for-real-by-exploring-the-git-directory-1e079c15b807)
+## Praca z gałęziami
 
 !SUB
-### Inne platformy
+### Gałęzie
 
-[github.com](https://github.com)
+![branches](images/branches.svg)<!-- .element width="70%" -->
 
-![github](images/Octocat.png)
-
-Największa platforma pracy grupowej udostępniająca repozytoria git. Darmowy dla projektów opensource.
-
-[bitbucket.org](https://bitbucket.org)
-
-![bitbucket](images/bitbucket.png)
-
-Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz małych zespołów (do 5 osób)
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
 !SUB
-### [https://code.cis.gov.pl/projects/new](https://code.cis.gov.pl/projects/new)
+### Zadanie 8
 
-![new repo](images/gitlab-new-repo.png)
+Ponieważ dodajemy do programu kompletnie nowe funkcjonalności, dobrze jest w tym momencie utworzyć nowy branch, w którym będziemy dokonywali zmian niezależnie od mastera.
 
 !SUB
-### Wrzucamy repozytorium z ćwiczeniami [code.cis.gov.pl](https://code.cis.gov.pl)
+### Nowa gałąź
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-- Commit zmian
-- Dołączamy zdalne repozytorium zgodnie z podpowiedzią GitLab
-- Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
+_**git checkout**_ - zmienia stan katalogu roboczego na wybraną gałąź
+
+_**git checkout -b**_ - tworzy nową gałąź
+
+```bash
+git checkout -b feature
+git branch
+git status
+```
+
+!SUB
+### Nowa gałąź
+
+![VSC_branch](images/vscode-git-branch1.png)
+![VSC_branch](images/vscode-git-branch2.png)
+
+!SUB
+### Zadanie 8
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+**Rozwiązujemy zadanie 8**
+
+!SUB
+### Zapisujemy zmiany
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 ```
-git remote add origin git@code.cis.gov.pl:<user>/git_ex1.git
+git add vects_from_file.py
+git commit
+git status
+```
+
+!SUB
+### Zapisujemy zmiany
+
+![VSC_branch](images/vscode-git-add.png)
+![VSC_branch](images/vscode-commit.png)
+
+!SUB
+### Praca z gałęziami
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+```
+git status
+ls
 git checkout master
-git push -u origin master
+git status
+ls
+git diff feature
 ```
-
-- Oglądamy nasze commit-y na [code.cis.gov.pl](https://code.cis.gov.pl)
 
 !SUB
-### Wysyłanie zmian
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+### Praca z gałęziami
 
-_**git push**_ - Wysyła zmiany z lokalnego do zdalnego repozytorium
-
-```
-git push
-```
-
-Domyślnie git clone konfiguruje gałąź główną (*master*) aby śledziła zdalną gałąź główną (*origin/master*).
-
-![push](images/push.png)
-
-<small>[*hikaruzone.wordpress.com](https://hikaruzone.wordpress.com/2015/10/06/in-case-of-fire-1-git-commit-2-git-push-3-leave-building/)</small>
+![VSC_branch](images/vscode-branch-history.png)
 
 !SUB
-### Wysyłamy nową gałąź
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff1.png)
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff2.png)
+
+!SUB
+### Praca z gałęziami
+
+![VSC_branch](images/vscode-branch-diff3.png)
+
+!SUB
+### Zadania 9 - 13
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+* Zadanie 9 - 11 rozwiązujemy w gałęzi **feature**
+* Zadanie 12 - 13 rozwiązujemy w gałęzi **master**
+
+!SUB
+### Git - Merge vs Rebase
+
+Załóżmy że gałęzie Feature oraz Master rozjechały się
+
+![merge vs rebase](images/merge_rebase01.svg)<!-- .element width="70%" -->
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+Mamy dwie strategie ich połączenia: *merge* albo *rebase*
+
+!SUB
+### Merge
+
+* Pozostawia commity bez zmian
+* Rozwiązywanie konfliktów wykonujemy dla pełnego merge
+* Historia repozytorium staje się nieliniowa
+* Jeśli repozytoria nie rozjechały się możliwy jest "fast forward"
+  * Nowe commity dopisywane są na końcu gałęzi bez dodatkowego commitu "merge"
+
+!SUB
+### Merge
+
+![merge](images/merge_rebase02.svg)
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+!SUB
+### Rebase
+
+* Przepisuje commity na HEAD gałęzi z którą wykonujemy rebase
+  * Zmienione zostają SHA1 commitów (z punktu widzenia git są to nowe byty)
+* Każdy z commitów z Feature nakładany jest osobno - rozwiązujemy konflikty pojedyńczo
+
+!SUB
+### Rebase
+
+![rebase](images/merge_rebase03.svg)<!-- .element width="80%" -->
+
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+!SUB
+### Rebase
+
+Po wykonaniu merge otrzymujemy liniową historię
+
+![merge result](images/merge_rebase04.svg)<!-- .element width="80%" -->
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+
+!SUB
+### Testujmy merge i rebase
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
+Przygotujemy nowe gałęzie do testów:
+* *master_rebase*
+* *master_merge*
+* *feature_rebase*
+* *feature_merge*
+* master i feature pozostają bez zmian
+* na master_rebase wykonamy rebase
+* na master_merge wykonamy merge
+
 ```
+git checkout master
+git checkout -b master_rebase
+git chekout -b master_merge
 git checkout feature
-git push -u origin feature
+git checkout -b feature_rebase
+git checkout -b feature_merge
+
+gitk --all
 ```
 
 !SUB
-### Wysyłamy nową gałąź
+### Testujmy merge i rebase
 
-![VSC new repo](images/vscode-branch-push.png)
+1. _checkout **master**_
+2. _new branch **master_rebase**_
+3. _new branch **master_merge**_
 
+![VSC_branch](images/vscode-git-checkout-master.png)
+![VSC_branch](images/vscode-git-feature-new-branch.png)
+
+!SUB
+### Testujmy merge i rebase
+
+1. _checkout **feature**_
+2. _new branch **feature_rebase**_
+3. _new branch **feature_merge**_
+
+![VSC_branch](images/vscode-git-checkout-feature.png)
+![VSC_branch](images/vscode-git-feature-new-branch.png)
+
+!SUB
+### Testujmy merge i rebase
+
+![VSC_branch](images/vscode-merge-test1.png)
+
+!SUB
+### Rebase
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+Będąc w gałęzi **feature_rebase** wykonujemy *rebase* zmian z gałęzi **master_rebase**
+
+```
+git checkout feature_rebase
+git rebase master_rebase
+gitk --all
+```
+
+!SUB
+### Rebase
+
+![VSC_branch](images/vscode-rebase1.png)
+![VSC_branch](images/vscode-rebase2.png)
+![VSC_branch](images/vscode-rebase3.png)
+
+!SUB
+### Rebase
+
+![VSC_branch](images/vscode-rebase4.png)
+
+!SUB
+### Merge
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+Będąc w gałęzi **master_merge** wykonujemy *merge* zmian z gałęzi **feature_merge**
+
+```
+git checkout master_merge
+git merge feature_merge
+gitk --all
+```
+
+!SUB
+### Merge
+
+![VSC_branch](images/vscode-merge1.png)
+![VSC_branch](images/vscode-merge2.png)
+![VSC_branch](images/vscode-merge3.png)
+
+!SUB
+### Fast forward
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+**Fast Forward** występuje wtedy gdy zmiany z gałęzi możemy *czysto* nałożyć na aktualną.
+
+Będąc w gałęzi **master_rebase** wykonujemy *merge* zmian z gałęzi **feature_rebase**
+
+```
+git checkout master_rebase
+git merge feature_rebase
+gitk --all
+```
+
+!SUB
+### Fast forward
+
+1. _checkout **master_rebase**_
+2. _merge **feature_rebase**_
+
+!SUB
+### Testujmy merge i rebase
+![VSC_branch](images/vscode-merge-test2.png)
+
+!SUB
+### Git - przepisywanie historii
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+* `git commit --amend` - umożliwia poprawienie ostatniego wysłanego commitu
+* `git rebase` i `git pull --rebase`
+* `git cherry-pick`
+* `git filter-branch` - pozwala przepisać historię WSZYSTKICH commitów
+ <small>stosowane bardzo rzadko i tylko w gardłowych sytuacjach (np. commity zawierały poufne informacje)</small>
+
+#### Uwaga
+Dobrą zasadą jest nie podmienianie commitów wysłanych do publicznego repozytorium !!
+
+!SUB
+### Wybieranie wisienek
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+_**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
+
+![cherry pick](images/cherry-pick.png)
+
+<small>[*plasticscm.com](https://www.plasticscm.com/documentation/advanced-version-control-guide.html#cherry-pick)</small>
