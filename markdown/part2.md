@@ -190,4 +190,17 @@ Gitlab stosuje dodatkowy system odnośników:
 
 * Każde rozwiązane zadanie to nowy _**commit**_
 * Nowe _**commit-y**_ wysyłamy do zdalnego repozytorium przy pomocy _**push**_
+* _**commit-y**_ opatrujemy komentarzami wskazującymi na _**issue**_ zadania którego dotyczą:
+
+```none
+Zadanie #2
+```
+
+**Bonus**
+
+Zamykanie _**issue**_ przy pomocy _**commit-a**_ wysłanego do gałęzi master:
+
+```none
+Fix #3
+```
 
