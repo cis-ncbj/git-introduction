@@ -44,7 +44,7 @@ Kolejna platforma z repozytoriami git. Darmowy dla projektów opensource oraz ma
 - Visual Studio Code jak narazie nie ma interfejsu do dodawania zdalnych repozytorii
 
 ```
-git remote add origin git@code.cis.gov.pl:<user>/git_hands_on.git
+git remote add origin git@code.cis.gov.pl:<user>/git_handson.git
 git checkout master
 git push -u origin master
 ```
@@ -82,13 +82,6 @@ Sprawdza się jednak równie dobrze jako narzędzie do planowania nowych funkcjo
 Nasze issues możemy grupować oznaczając je przy pomocy etykiet (labels):
 
 ![gitlab_labels](images/gitlab-labels.png)
-
-!SUB
-### Issues
-
-Dla każdego z zadań do wykonania w dalszej części ćwiczeń zakładamy oddzielne Issue.
-
-Lista zadań: https://goo.gl/gn53av
 
 !SUB
 ### Kamienie milowe
@@ -183,24 +176,9 @@ Gitlab stosuje dodatkowy system odnośników:
 
 
 !SUB
-### Zadania 1 - 6
+### Ćwiczenia
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-** Powracamy do ćwiczeń python **
-
-* Każde rozwiązane zadanie to nowy _**commit**_
-* Nowe _**commit-y**_ wysyłamy do zdalnego repozytorium przy pomocy _**push**_
-* _**commit-y**_ opatrujemy komentarzami wskazującymi na _**issue**_ zadania którego dotyczą:
-
-```none
-Zadanie #2
-```
-
-**Bonus**
-
-Zamykanie _**issue**_ przy pomocy _**commit-a**_ wysłanego do gałęzi master:
-
-```none
-Fix #3
-```
-
+- Zakładamy min 2 Issue
+- Zakładamy min 1 Milestone
+- Przypisujemy Issues do Milstone

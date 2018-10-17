@@ -116,7 +116,7 @@ ls -a
 ### Dodawanie plików do repozytorium
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-Dodajmy do repozytorium plik *main.py* utworzony na potrzeby ćwiczenia 1.
+Dodajmy do repozytorium plik *main.py* z rozwiązaniem ćwiczenia 2 - "Stworzyć funkcję poly_solve() do rozwiązywania równań kwadratowych."
 
 _**git status**_ - sprawdzamy aktualny stan naszego repozytorium:
 
@@ -220,9 +220,9 @@ git commit -a -m "<Commit message>"
 ### Praca z kodem
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-** Powracamy do ćwiczeń python **
-
-*Rozwiązujemy jedno zadanie*
+- Dodajemy plik *README.md* z opisem naszych ćwiczeń
+- Dodajemy plik *parametry.txt* z ćwiczenia 3 - "Ręcznie stworzyć plik z parametry.txt z parametrami do równania kwadratowego"
+- Dodajemy komentarz do naszej funkcji `poly_solve` w pliku *main.py*
 
 !SUB
 ### Dodajemy zmiany do repozytorium
@@ -235,7 +235,7 @@ git status
 
 git add README.md
 git add main.py
-git add data.txt
+git add parametry.txt
 
 git status
 ```
@@ -253,7 +253,7 @@ Przykład repozytorium z plikami w różnym stanie
 ```bash
 $ git status -s
 MM README.md        #<3>
-A  data.txt         #<2>
+A  parametry.txt    #<2>
  M main.py          #<1>
  ?? test.txt
 ```

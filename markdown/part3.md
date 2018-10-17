@@ -12,7 +12,7 @@
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
 !SUB
-### Zadania "plots"
+### Zadania "odczyt z pliku"
 
 Ponieważ dodajemy do programu kompletnie nowe funkcjonalności, dobrze jest w tym momencie utworzyć nowy branch, w którym będziemy dokonywali zmian niezależnie od mastera.
 
@@ -27,7 +27,7 @@ _**git checkout**_ - zmienia stan katalogu roboczego na wybraną gałąź
 _**git checkout -b**_ - tworzy nową gałąź
 
 ```bash
-git checkout -b plots
+git checkout -b feature
 git branch
 git status
 ```
@@ -39,17 +39,17 @@ git status
 ![VSC_branch](images/vscode-git-branch2.png)
 
 !SUB
-### Zadanie 8
+### Ćwiczenia (feature)
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-**Rozwiązujemy zadania "plots"**
+Dodajemy do pliku *main.py* rozwiązanie zadania 4: *Stworzyć funkcję read_file() do wczytywania pliku parametry.txt*
 
 !SUB
 ### Zapisujemy zmiany
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 ```
-git add vects_from_file.py
+git add main.py
 git commit
 git status
 ```
@@ -61,6 +61,30 @@ git status
 ![VSC_branch](images/vscode-commit.png)
 
 !SUB
+### Ćwiczenia (feature)
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+* Dodajemy do pliku *main.py* rozwiązanie zadania 5: *W pętli rozwiązać wielomiany z pliku parametry.txt*
+* Zapisujemy zmiany jako **commit**.
+
+  Jako komentarz używamy zwrotu **Fix #1**
+
+!SUB
+### Wysyłamy nową gałąź
+<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+
+```
+git checkout feature
+git push -u origin feature
+```
+
+!SUB
+### Wysyłamy nową gałąź
+
+![VSC new repo](images/vscode-branch-push.png)
+
+
+!SUB
 ### Praca z gałęziami
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
@@ -70,7 +94,7 @@ ls
 git checkout master
 git status
 ls
-git diff plots
+git diff feature
 ```
 
 !SUB
@@ -94,37 +118,24 @@ git diff plots
 ![VSC_branch](images/vscode-branch-diff3.png)
 
 !SUB
-### Wysyłamy nową gałąź
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
-
-```
-git checkout plots
-git push -u origin plots
-```
-
-!SUB
-### Wysyłamy nową gałąź
-
-![VSC new repo](images/vscode-branch-push.png)
-
-
-!SUB
-### Zadania "rng" i "dirs"
+### Ćwiczenia (master)
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-* Zadania "rng" rozwiązujemy w gałęzi **rng**
-* Zadanie "dirs" rozwiązujemy w gałęzi **master**
+W gałęzi **master**:
+
+* Zmieniamy parametry wielomianu zapisane w pliku *main.py*
+* Dodajemy do pliku *main.py* rozwiązanie zadania 9: *Stworzyć funkcję read_data_file() do wczytywania danych z pliku dane.txt*
+
+  Jako komentarza używamy zwrotu **Fixes #2**
 
 !SUB
-### Git - Merge vs Rebase
+### Git - łączenie gałęzi
 
 Załóżmy że gałęzie Feature oraz Master rozjechały się
 
 ![merge vs rebase](images/merge_rebase01.svg)<!-- .element width="70%" -->
 
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
-
-Mamy dwie strategie ich połączenia: *merge* albo *rebase*
 
 !SUB
 ### Merge
@@ -143,112 +154,14 @@ Mamy dwie strategie ich połączenia: *merge* albo *rebase*
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
 !SUB
-### Rebase
-
-* Przepisuje commity na HEAD gałęzi z którą wykonujemy rebase
-  * Zmienione zostają SHA1 commitów (z punktu widzenia git są to nowe byty)
-* Każdy z commitów z Feature nakładany jest osobno - rozwiązujemy konflikty pojedyńczo
-
-!SUB
-### Rebase
-
-![rebase](images/merge_rebase03.svg)<!-- .element width="80%" -->
-
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
-
-!SUB
-### Rebase
-
-Po wykonaniu merge otrzymujemy liniową historię
-
-![merge result](images/merge_rebase04.svg)<!-- .element width="80%" -->
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
-
-
-!SUB
-### Testujmy merge i rebase
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
-
-Przygotujemy nowe gałęzie do testów:
-* *master_rebase*
-* *master_merge*
-* *plots_rebase*
-* *plots_merge*
-* master i plots pozostają bez zmian
-* na master_rebase wykonamy rebase
-* na master_merge wykonamy merge
-
-```
-git checkout master
-git checkout -b master_rebase
-git chekout -b master_merge
-git checkout plots
-git checkout -b plots_rebase
-git checkout -b plots_merge
-
-gitk --all
-```
-
-!SUB
-### Testujmy merge i rebase
-
-1. _checkout **master**_
-2. _new branch **master_rebase**_
-3. _new branch **master_merge**_
-
-![VSC_branch](images/vscode-git-checkout-master.png)
-![VSC_branch](images/vscode-git-feature-new-branch.png)
-
-!SUB
-### Testujmy merge i rebase
-
-1. _checkout **plots**_
-2. _new branch **plots_rebase**_
-3. _new branch **plots_merge**_
-
-![VSC_branch](images/vscode-git-checkout-feature.png)
-![VSC_branch](images/vscode-git-feature-new-branch.png)
-
-!SUB
-### Testujmy merge i rebase
-
-![VSC_branch](images/vscode-merge-test1.png)
-
-!SUB
-### Rebase
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
-
-Będąc w gałęzi **plots_rebase** wykonujemy *rebase* zmian na gałęzi **master_rebase**
-
-```
-git checkout plots_rebase
-git rebase master_rebase
-gitk --all
-```
-
-!SUB
-### Rebase
-
-![VSC_branch](images/vscode-rebase1.png)
-![VSC_branch](images/vscode-rebase2.png)
-![VSC_branch](images/vscode-rebase3.png)
-
-!SUB
-### Rebase
-
-![VSC_branch](images/vscode-rebase4.png)
-
-!SUB
 ### Merge
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-Będąc w gałęzi **master_merge** wykonujemy *merge* zmian z gałęzi **plots_merge**
+Będąc w gałęzi **master** wykonujemy *merge* zmian z gałęzi **feature**
 
 ```
-git checkout master_merge
-git merge plots_merge
+git checkout master
+git merge feature
 gitk --all
 ```
 
@@ -260,63 +173,21 @@ gitk --all
 ![VSC_branch](images/vscode-merge3.png)
 
 !SUB
+### Rozwiązywanie konfliktów
+
+![conflict](images/vscode-conflict.png)
+
+!SUB
 ### Fast forward
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 **Fast Forward** występuje wtedy gdy zmiany z gałęzi możemy *czysto* nałożyć na aktualną.
 
-Będąc w gałęzi **master_rebase** wykonujemy *merge* zmian z gałęzi **plots_rebase**
-
-```
-git checkout master_rebase
-git merge plots_rebase
-gitk --all
-```
-
-!SUB
-### Fast forward
-
-1. _checkout **master_rebase**_
-2. _merge **plots_rebase**_
-
-!SUB
-### Testujmy merge i rebase
-![VSC_branch](images/vscode-merge-test2.png)
-
-!SUB
-### Dołączamy zmiany do gałęzi master
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
-
-Będąc w gałęzi **master** wykonujemy *merge* zmian z gałęzi **plots_rebase**
-
-```
-git checkout master
-git merge plots_rebase
-```
-
-Będąc w gałęzi **rng** wykonujemy *rebase* zmian na gałęzi **master**
-
-```
-git checkout rng
-git rebase master
-```
-
-Będąc w gałęzi **master** wykonujemy *merge* zmian z gałęzi **rng**
-
-```
-git checkout master
-git merge rng
-```
-
-!SUB
-### Dołączamy zmiany do gałęzi master
-
-1. _checkout **master**_
-1. _merge **plots_rebase**_
-1. _checkout **rng**_
-1. _rebase **master**_
-1. _checkout **master**_
-1. _merge **rng**_
+- Zakładamy gałąź *clean*
+- Dodajemy do repozytorium nowy plik *clean.txt*
+- Wykonujemy **git commit**
+- Przechodzimy do gałęzi *master*
+- Wykonujemy **git merge clean**
 
 !SUB
 ### Git - przepisywanie historii
