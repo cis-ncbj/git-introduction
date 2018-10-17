@@ -5,6 +5,46 @@
 ## Sztuczki git
 
 !SUB
+### Guidelines
+
+* Zapisuj często swoją pracę: **commit**
+* Dbaj by komentarze commit-ów opisywały zawarte zmiany
+* Korzystaj z zdalnego repozytorium: **push**
+* Nie nadpisuj opublikowanej historii: **git push --force**
+* Korzystaj z automatyzacji (automatyczne testy, kompilacja, etc)
+* W razie problemów nie panikuj
+  * Zrób backup
+  * Spokojnie poszukaj rozwiązania - w większości przypadków udaje się *naprostować* repozytorium git
+
+https://sethrobertson.github.io/GitBestPractices/
+
+!SUB
+### Git i pliki binarne
+
+* Git słabo radzi sobie z dużymi plikami binarnymi
+* Nawet małe zmiany zazwyczaj prowadzą do zapisania pełnej kopi pliku binarnego
+
+### Rozwiązanie
+### Git Large File Storage (LFS)
+
+* https://git-lfs.github.com/
+* https://docs.gitlab.com/ee/workflow/lfs/manage_large_binaries_with_git_lfs.html
+
+!SUB
+### Git LFS
+
+![git-lfs-add](images/git-lfs-add.svg)<!-- .element width="70%" -->
+
+<small>[*atlassian.com](http://www.atlassian.com)</small>
+
+!SUB
+### Git LFS
+
+![git-lfs-push](images/git-lfs-push.svg)<!-- .element width="70%" -->
+
+<small>[*atlassian.com](http://www.atlassian.com)</small>
+
+!SUB
 ### Git - zwaliłem ostatni commit ;-(
 ![facepalm](images/face-palm.jpg)<!-- .element width="70%" -->
 
