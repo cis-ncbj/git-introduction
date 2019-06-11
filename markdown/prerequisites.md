@@ -6,10 +6,10 @@
 * Slajdy dostępne są pod adresem:
 
  [http://cis-ncbj.github.io/git-introduction/](http://cis-ncbj.github.io/git-introduction/)
-* Nawigacja przez slajdy jest prosta, wystarczy używać klawisze strzałek:
+* Nawigacja przez slajdy jest prosta, wystarczy używać strzałek na klawiaturze:
   * Lewo i prawo przechodzi do poprzedniej lub następnej sekcji. Góra i dół przechodzi do poprzedniego lub następnego slajdu.
   * Spacja zawsze przechodzi do następnego slajdu.
-* Wszystkie kroki zakładają że macie otwart terminal.
+* Wszystkie kroki zakładają że macie otwarty terminal lub Visual Studio Code.
 * Prawie wszystkie bloki kodu pomyślane są aby je wykonać:
   *  `\` oznacza kontynuację linii i można go kopiować,
   * `< ... > ` oznacza że należy wstawić poprawną wartość.

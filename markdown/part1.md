@@ -116,7 +116,7 @@ ls -a
 ### Dodawanie plików do repozytorium
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-Dodajmy do repozytorium plik *main.py* z rozwiązaniem ćwiczenia 2 - "Stworzyć funkcję poly_solve() do rozwiązywania równań kwadratowych."
+Dodajmy do repozytorium pusty plik *main.py*
 
 _**git status**_ - sprawdzamy aktualny stan naszego repozytorium:
 
@@ -217,12 +217,16 @@ git commit -a -m "<Commit message>"
 ![VSC commands](images/vsc-git-commands.png)
 
 !SUB
-### Praca z kodem
+### Praca z kodem 1
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
 - Dodajemy plik *README.md* z opisem naszych ćwiczeń
-- Dodajemy plik *parametry.txt* z ćwiczenia 3 - "Ręcznie stworzyć plik z parametry.txt z parametrami do równania kwadratowego"
-- Dodajemy komentarz do naszej funkcji `poly_solve` w pliku *main.py*
+- W pliku *main.py* definiujemy *__main__*
+
+```
+if __name__== "__main__":
+    print("START")
+```
 
 !SUB
 ### Dodajemy zmiany do repozytorium
@@ -235,7 +239,6 @@ git status
 
 git add README.md
 git add main.py
-git add parametry.txt
 
 git status
 ```
@@ -299,6 +302,43 @@ git log <hash commit-u>
 ### Historia zmian
 
 ![VSC history](images/vscode-git-history.png)
+
+!SUB
+### Praca z kodem 2
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+- W pliku *main.py* definiujemy
+  - Dane w postaci listy słowników opisujących wybrane obiekty np. zwierzęta
+  - Definiujemy funkcję *display* która wypisze Dane na ekran
+  - Wywołujemy *display* wewnątrz *__main__*
+
+!SUB
+### Praca z kodem 2
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+```
+DATA = [
+    {
+        "imię": "Filemon",
+        "gatunek": "Kot",
+        "waga": 1,
+        "wiek": 0.5
+    },
+    {
+        "imię": "Szarik",
+        "gatunek": "Pies",
+        "waga": 30,
+        "wiek": 2
+    }
+]
+
+def display(data):
+    print(data)
+
+if __name__== "__main__":
+    print("START")
+    display(DATA)
+```
 
 !SUB
 ### Co właściwie się zmieniło?

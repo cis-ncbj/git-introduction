@@ -16,7 +16,7 @@
 
 Ponieważ dodajemy do programu kompletnie nowe funkcjonalności, dobrze jest w tym momencie utworzyć nowy branch, w którym będziemy dokonywali zmian niezależnie od mastera.
 
-Ogólnie gałęzie przeznaczone do opracowania nowej funkcjinalności nazywamy: _Feature Branches_
+Ogólnie gałęzie przeznaczone do opracowania nowej funkcjonalności nazywamy: _Feature Branches_
 
 !SUB
 ### Nowa gałąź
@@ -42,7 +42,12 @@ git status
 ### Ćwiczenia (feature)
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-Dodajemy do pliku *main.py* rozwiązanie zadania 4: *Stworzyć funkcję read_file() do wczytywania pliku parametry.txt*
+Dodajemy do pliku *main.py* nową funkcję która odczyta dane z pliku w formacie JSON
+
+- dodajemy plik z danymi
+- otwieramy plik przy pomocy `open`
+- czytamy zawartość przy pomocy `json.load`
+- modyfikujemy *__main__* aby korzystał z nowej funkcji
 
 !SUB
 ### Zapisujemy zmiany
@@ -64,7 +69,8 @@ git status
 ### Ćwiczenia (feature)
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-* Dodajemy do pliku *main.py* rozwiązanie zadania 5: *W pętli rozwiązać wielomiany z pliku parametry.txt*
+* Dodajemy do pliku *main.py* możliwość przeczytania dwóch plików i połączenia danych
+* Korzystamy z metody `extend` dostępnej dla obiektów list w python
 * Zapisujemy zmiany jako **commit**.
 
   Jako komentarz używamy zwrotu **Fix #1**
@@ -123,10 +129,14 @@ git diff feature
 
 W gałęzi **master**:
 
-* Zmieniamy parametry wielomianu zapisane w pliku *main.py*
-* Dodajemy do pliku *main.py* rozwiązanie zadania 9: *Stworzyć funkcję read_data_file() do wczytywania danych z pliku dane.txt*
+* Upiększamy wypisywanie danych: zamieniamy funkcję `print` na `pprint.pprint`
+* Zapisujemy jako commit
 
   Jako komentarza używamy zwrotu **Fixes #2**
+
+* Modyfikujemy funkcję `display`
+  - przyjmuje dodatkowy parametr `select` z domyślną wartością `None`
+  - jeśli parametr został zdefiniowany wyświetla tylko wybrane dane (np. na podstawie wieku)
 
 !SUB
 ### Git - łączenie gałęzi
@@ -211,3 +221,70 @@ _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 ![cherry pick](images/cherry-pick.png)
 
 <small>[*plasticscm.com](https://www.plasticscm.com/documentation/advanced-version-control-guide.html#cherry-pick)</small>
+
+!SUB
+### Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+* Przepisuje commity w gałęzi od nowa
+* Komity w gałęzi stają się dziećmi **HEAD** gałęzi master
+* Rozwiązywanie konfliktów wykonujemy dla każdego z commitów
+* Historia repozytorium pozostaje liniowa
+
+!SUB
+### Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+![merge](images/merge_rebase03.svg)
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+!SUB
+### Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+![merge](images/merge_rebase04.svg)
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
+
+
+!SUB
+### Ćwiczenie Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+Cofamy merge w gałęzi master
+
+```
+git reset --hard HEAD^
+```
+
+Uwaga!!! `git reset --hard` usuwa pliki
+
+!SUB
+### Git Reset
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+![reset](images/reset.jpg)
+
+!SUB
+### Ćwiczenie Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+Będąc w gałęzi **feature** wykonujemy *rebase* zmian na **HEAD** gałęzi **master**
+
+```
+git checkout feature
+git rebase master
+gitk --all
+```
+
+Dla każdego commitu z gałęzi **feature** rozwiązujemy konflikty jeśli istnieją
+
+!SUB
+### Ćwiczenie Rebase
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
+
+![VSC_branch](images/vscode-rebase1.png)
+![VSC_branch](images/vscode-rebase2.png)
+![VSC_branch](images/vscode-rebase3.png)
+![VSC_branch](images/vscode-rebase4.png)
