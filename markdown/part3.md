@@ -39,6 +39,13 @@ git status
 ![VSC_branch](images/vscode-git-branch2.png)
 
 !SUB
+### Git checkout
+
+![merge](images/git-flow.png)
+
+<small>[*unwiredlearning](https://unwiredlearning.com)</small>
+
+!SUB
 ### Ćwiczenia (feature)
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
@@ -88,6 +95,13 @@ git push -u origin feature
 ### Wysyłamy nową gałąź
 
 ![VSC new repo](images/vscode-branch-push.png)
+
+!SUB
+### Git push
+
+![merge](images/git-flow.png)
+
+<small>[*unwiredlearning](https://unwiredlearning.com)</small>
 
 
 !SUB
@@ -235,7 +249,8 @@ _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 ### Rebase
 <!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
-![merge](images/merge_rebase03.svg)
+![merge](images/merge_rebase03.svg)<!-- .element width="70%" -->
+
 
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
@@ -243,7 +258,7 @@ _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 ### Rebase
 <!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
-![merge](images/merge_rebase04.svg)
+![merge](images/merge_rebase04.svg)<!-- .element width="70%" -->
 
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials)</small>
 
@@ -264,7 +279,9 @@ Uwaga!!! `git reset --hard` usuwa pliki
 ### Git Reset
 <!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
-![reset](images/reset.jpg)
+![reset](images/reset.jpg)<!-- .element width="70%" -->
+
+<small>[*blog.nakulrajput.com](https://blog.nakulrajput.com/git-reset/)</small>
 
 !SUB
 ### Ćwiczenie Rebase

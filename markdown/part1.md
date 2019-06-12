@@ -144,6 +144,13 @@ git add *.py
 ![VSC commands](images/vscode-git-add-all.png)
 
 !SUB
+### Git add
+
+![merge](images/git-flow.png)
+
+<small>[*unwiredlearning](https://unwiredlearning.com)</small>
+
+!SUB
 ### .gitignore
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
@@ -215,6 +222,13 @@ git commit -a -m "<Commit message>"
 <!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 ![VSC commands](images/vsc-git-commands.png)
+
+!SUB
+### Git commit
+
+![merge](images/git-flow.png)
+
+<small>[*unwiredlearning](https://unwiredlearning.com)</small>
 
 !SUB
 ### Praca z kodem 1
@@ -395,3 +409,10 @@ mv pusty.txt nowy.txt
 git add nowy.txt
 git rm pusty.txt
 ```
+
+!SUB
+### Git rm/mv
+
+![merge](images/git-flow.png)
+
+<small>[*unwiredlearning](https://unwiredlearning.com)</small>
