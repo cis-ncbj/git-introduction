@@ -44,6 +44,16 @@ https://sethrobertson.github.io/GitBestPractices/
 
 <small>[*atlassian.com](http://www.atlassian.com)</small>
 
+
+!SUB
+### Git LFS w pigułce
+
+```
+git lfs install        # initialize the Git LFS project
+git lfs track "*.iso"  # select the file extensions that you want to treat as large files
+git add .gitattributes
+```
+
 !SUB
 ### Git - zwaliłem ostatni commit ;-(
 ![facepalm](images/face-palm.jpg)<!-- .element width="70%" -->

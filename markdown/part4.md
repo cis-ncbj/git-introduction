@@ -7,78 +7,42 @@
 !SUB
 ### Zespół jednoosobowy ;-)
 
-Pracuje samodzielnie nad projektem, po co mi Git?
+Pracuje samodzielnie nad projektem.
+
+**Po co mi Git?**
 
 * Backup
 * Przenośność między maszynami
 * Prostota udostępnienia innym poprzez GitHub, GitLab etc.
 
-!SUB
-### Forking Workflow
+![basic workflow](images/basic.png)
 
-* Popularny wśród małych projektów na GitHub / BitBucket etc
-* Jeden maintainer głównego repozytorium
-* Każdy pracuje z własnym forkiem przesyłając pull requesty do maintainera
-* Ułatwia kontynuację projektu gdy oryginalny autor straci zainteresowanie
+<small>[*buddy.works](https://buddy.works/blog/5-types-of-git-workflows)
 
 !SUB
-### Forking Workflow
+### Praca w zespole
 
-![fork workflow](images/fork_workflow01.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow02.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+* Istnieje wiele modeli pracy zespołowej w oparciu o git:
+  * Git Flow
+  * Feature Branch
+  * GitHub Flow
+  * Forking Flow
 
 !SUB
-### Forking Workflow
+### Praca w zespole
 
-![fork workflow](images/fork_workflow03.svg)
+Wspólne cechy wszystkich *Flow:
 
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow04.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+* Jedna gałąź jest uznawana za **stabilną**
+  - Kod który tu ląduje **musi** być działający i gotowy do wykorzystania
+  - Często będzie automatycznie wysyłany do środowiska produkcyjnego
+* Prace rozwojowe wykonujemy w **gałęziach**
+* Operacje merge poprzedzone są **recenzją** kodu
 
 !SUB
-### Forking Workflow
+### Feature Branch / GitHub workflow
 
-![fork workflow](images/fork_workflow05.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow06.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow07.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Forking Workflow
-
-![fork workflow](images/fork_workflow08.svg)
-
-<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
-
-!SUB
-### Feature branch workflow
+_**HEAD**_ gałęzi _**master**_ zawsze jest działającą aplikacją
 
 _**Każda**_ zmiana zaczyna się od utworzenia nowej gałęzi
 
@@ -86,27 +50,45 @@ _**Każda**_ zmiana zaczyna się od utworzenia nowej gałęzi
 
 <small>[*buddy.works](https://buddy.works/blog/5-types-of-git-workflows)
 
+
 !SUB
-### Feature branch workflow
+### Feature Branch / GitHub workflow
 
 _**Każdy**_ merge poprzedzony jet merge/pull request-em i recenzją kodu
 
-![branch workflow](images/feature-workflow.png)
+![branch workflow](images/GitHub-Flow.png)
 
-<small>[*github.com](https://guides.github.com/introduction/flow/)
+<small>[*buildazure.com](https://buildazure.com/2018/02/21/introduction-to-git-version-control-workflow/)
 
 !SUB
-### Gitflow Workflow
+### Git Flow Workflow
 
 * Preferowany przez większe projekty
-* Zazwyczaj więcej osób ma uprawnienia do zapisu w głównym repozytorium
 * Kilka zdefiniowanych gałęzi odpowiada różnym stadiom rozwoju projektu
 * Bardzo często łączony z Forking Workflow
 
 !SUB
-### Gitflow Workflow
+### Git Flow Workflow
 
 ![gitflow workflow](images/branch_workflow01.svg)<!-- .element width="80%" -->
+
+<small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
+
+
+!SUB
+### Forking Workflow
+
+* Bardzo podobny do GitHub workflow
+* Zamiast **gałęzi** w głównym repozytorium wykorzystujemy **fork-i**
+  - Każdy pracuje z własnym forkiem przesyłając pull requesty do maintainera
+* Popularny wśród małych projektów na GitHub / BitBucket etc
+* Jeden maintainer głównego repozytorium
+
+
+!SUB
+### Forking Workflow
+
+![fork workflow](images/fork_workflow06.svg)
 
 <small>[*atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows)</small>
 

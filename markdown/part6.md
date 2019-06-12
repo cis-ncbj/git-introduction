@@ -29,9 +29,17 @@ https://jenkins.io
 
 https://travis-ci.org
 
+!SUB
+### CI
+
 ![circleci](images/circleci.png)<!-- .element width="10%" -->
 
 https://circleci.com
+
+![gitlab](images/gitlab-logo.png)
+
+https://gitlab.com
+
 
 !SUB
 ### Testery kodu
@@ -57,8 +65,32 @@ https://snyk.io/
 
 
 !SUB
-### Przykłady 2
+### code.cis.gov.pl
 
-* https://github.com/UCL/STIR/pull/108
-* https://github.com/ansible/ansible/pull/37371
+https://docs.gitlab.com/ce/ci/
 
+https://docs.gitlab.com/ce/ci/yaml/README.html
+
+!SUB
+### Ćwiczenia
+
+Aktywujemy CI dla projektu **git_handson**
+
+* Settings -> General Settings -> Visibility ... -> Piplines -> [On]
+* Settings -> CI/CD -> Runners -> Shared Runners -> [Enable Shared Runners]
+
+!SUB
+### Ćwiczenia
+
+* Otwieramy projekt git_handson
+* Dodajemy plik .gitlab-ci.yml
+
+```
+pylint: # Nazwa zadania
+  tags: # Tagi określają predefiniowane środowiska
+    - python3 # W CIŚ mamy python3 i docker
+  stage: test # Domyślnie wyróżniamy trzy etapy: build -> test -> deploy
+  script: # Skrypt który będzie wykonany w zadaniu
+    - pip install pylint --quiet
+    - pylint *.py
+```

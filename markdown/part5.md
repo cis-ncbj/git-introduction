@@ -5,13 +5,14 @@
 ## Praca zespołowa
 
 !SUB
-### Widelce
+### Klony
 
 [data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
 
-![github fork](images/github-fork.gif)
+![clones](images/clones.jpg)<!-- .element width="50%" -->
 
-<small>[*github.com/diy](https://github.com/diy/open-sourcerer/blob/master/script.md)</small>
+
+<small>[*Lucasfilm Ltd.](https://www.lucasfilm.com/)</small>
 
 !SUB
 ### Klonowanie
@@ -21,13 +22,13 @@ _**git clone**_ - Klonuje / tworzy kopię zdalnego repozytorium lokalnie
 Klonowanie istniejącego repozytorium (SSH):
 
 ```
-git clone git@code.cis.gov.pl:<username>/data-science-ipython-notebooks.git
+git clone git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks.git
 ```
 
 Klonowanie istniejącego repozytorium (HTTPS):
 
 ```
-git clone https://code.cis.gov.pl/<username>/data-science-ipython-notebooks.git
+git clone https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks.git
 ```
 
 Klonowanie istniejącego lokalnego repozytorium:
@@ -52,6 +53,7 @@ cd data-science-ipython-notebooks
 git remote -v
 ```
 
+<!--
 !SUB
 ### Śledzenie *upstream*
 
@@ -66,6 +68,7 @@ git branch -a
 ```
 
 ![forks](images/forks.png)
+-->
 
 !SUB
 ### Pobieranie zmian
@@ -85,6 +88,7 @@ git pull --rebase # git fetch + git rebase
 
 <small>[*stackexchange](https://physics.stackexchange.com/questions/133614/the-best-way-in-which-a-man-can-pull-a-train)</small>
 
+<!--
 !SUB
 ### Pobieranie zmian z *upstream*
 
@@ -100,21 +104,15 @@ git pull upstream master
 ```bash
 git pull --rebase upstream master
 ```
+-->
 
 !SUB
 ### Feature branch
 
-Przygotowujemy środowisko - ładujemy anaconda
-
-Przykład dla linux-a i miniconda:
-```
-. ~/Anaconda3/bin/activate
-```
-
 Tworzymy gałąź na poprawki które przygotowujemy do włączenia do *upstream*
 
 ```bash
-git checkout -b excercise
+git checkout -b <username>
 ```
 
 Uruchamiamy notebook-a
@@ -124,7 +122,12 @@ cd <matplotlib|numpy|pandas|scikit-learn|scipy>
 jupyter notebook
 ```
 
-Commit zmian
+* Zapoznajmey się z notebookiem
+* Dodajemy jakąś zmianę:
+  * Zmiana rozmiaru próbki
+  * Zmiana parametrów
+  * Komentarz
+  * Dodatkowy plot
 
 ```
 git add <my_notebook>.ipynb
@@ -136,3 +139,11 @@ git commit
 
 ![merge request](images/merge-request.png)
 
+
+!SUB
+### Merge requests
+
+* Każdy zostanie przypisany do jednego MR
+* Każdy dodaje min jeden komentarz dotyczący konkretnej linii kodu widocznej w "changes"
+
+![comments](images/comments.png)
