@@ -163,7 +163,7 @@ pick 2b43748 Aktualizacja dokumentacji
 !SUB
 ### Git rebase --interactive
 
-Dla `reword` i `squash` otworzy się edytor z zawartością komentarza:
+Dla _**reword**_ i _**squash**_ otworzy się edytor z zawartością komentarza:
 
 * Edytujemy komentarz
 * Zapisujemy plik
@@ -173,12 +173,26 @@ Dla `reword` i `squash` otworzy się edytor z zawartością komentarza:
 !SUB
 ### Git rebase --interactive
 
-W przypadku `edit` git zatrzyma się:
+W przypadku _**edit**_ git zatrzyma się:
 
 * Edytujemy wybrane pliki
-* Dodajemy zmiany do indeksu: `git add`
-* Zapisujemy zmiany jako commit: `git commit --ammend`
-* Kontynuujemy: `git rebase --continue`
+* Dodajemy zmiany do indeksu:
+
+```
+git add
+```
+
+* Zapisujemy zmiany jako commit:
+
+```
+git commit --ammend
+```
+
+* Kontynuujemy:
+
+```
+git rebase --continue
+```
 
 !SUB
 ### Git rebase --interactive
@@ -186,8 +200,17 @@ W przypadku `edit` git zatrzyma się:
 W przypadku wystąpienia konfliktów:
 
 * Rozwiązujemy konflikty np.: z pomocą Visual Studio Code
-* Oznaczamy rozwiązane konflikty: `git add`
-* Kontynuujemy: `git rebase --continue`
+* Oznaczamy rozwiązane konflikty:
+
+```
+git add
+```
+
+* Kontynuujemy:
+
+```
+git rebase --continue
+```
 
 !SUB
 ### git stash
