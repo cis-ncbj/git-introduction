@@ -83,7 +83,7 @@ Aktywujemy CI dla projektu **git_handson**
 ### Ćwiczenia
 
 * Otwieramy projekt git_handson
-* Dodajemy plik .gitlab-ci.yml
+* Dodajemy plik _**.gitlab-ci.yml**_
 
 ```
 pylint: # Nazwa zadania

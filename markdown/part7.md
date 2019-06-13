@@ -161,6 +161,31 @@ pick 2b43748 Aktualizacja dokumentacji
 ```
 
 !SUB
+### Git - zmiany w starszych commitach
+
+Praca z `git rebase --interactive`:
+
+* Git dla poleceń `reword` i `squash` otworzy automatycznie edytor z zawartością komentarza
+  - Edytujemy komentarz
+  - Zapisujemy plik
+  - Zamykamy okno pliku
+  - Git automatycznie kontynuuje operację `rebase`
+* W przypadku `edit` git zatrzyma się
+  - Edytujemy wybrane pliki
+  - Dodajemy zmiany do indeksu: `git add`
+  - Zapisujemy zmiany jako commit: `git commit --ammend`
+  - Kontynuujemy: `git rebase --continue`
+
+!SUB
+### Git - zmiany w starszych commitach
+
+W przypadku wystąpienia konfliktów:
+
+* Rozwiązujemy konflikty np.: z pomocą Visual Studio Code
+* Oznaczamy rozwiązane konflikty: `git add`
+* Kontynuujemy: `git rebase --continue`
+
+!SUB
 ### git stash
 
 _**git stash**_ zapis stanu katalogu roboczego (oraz stanu indeksu) w "schowku"

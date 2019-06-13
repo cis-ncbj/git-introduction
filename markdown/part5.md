@@ -135,6 +135,15 @@ git commit
 ```
 
 !SUB
+### Feature branch
+
+Wysyłamy nową gałąź do repozytorium zdalnego:
+
+```
+git push -u origin <username>
+```
+
+!SUB
 ### Merge requests
 
 ![merge request](images/merge-request.png)
