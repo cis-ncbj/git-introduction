@@ -105,7 +105,7 @@ x, exec = run command (the rest of the line) using shell
 ```
 
 !SUB
-### Git - zmiany w starszych commitach
+### Git rebase --interactive
 
 Konfigurujemy git-a aby korzystał z VSC jako diff-tool dla aktualnego projektu:
 
@@ -124,7 +124,7 @@ Dodajemy nowe sekcje w pliku konfiguracyjnym:
 ```
 
 !SUB
-### Git - zmiany w starszych commitach
+### Git rebase --interactive
 <!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 Możemy też zmienić globalną konfigurację git-a aby zawsze korzystał z VSC jako diff-tool:
@@ -144,7 +144,7 @@ Dodajemy nowe sekcje w pliku konfiguracyjnym:
 ```
 
 !SUB
-### Git - zmiany w starszych commitach
+### Git rebase --interactive
 
 Ćwiczenie - wyedytujmy 4 ostatnie commity:
 
@@ -161,23 +161,27 @@ pick 2b43748 Aktualizacja dokumentacji
 ```
 
 !SUB
-### Git - zmiany w starszych commitach
+### Git rebase --interactive
 
-Praca z `git rebase --interactive`:
+Dla `reword` i `squash` otworzy się edytor z zawartością komentarza:
 
-* Git dla poleceń `reword` i `squash` otworzy automatycznie edytor z zawartością komentarza
-  - Edytujemy komentarz
-  - Zapisujemy plik
-  - Zamykamy okno pliku
-  - Git automatycznie kontynuuje operację `rebase`
-* W przypadku `edit` git zatrzyma się
-  - Edytujemy wybrane pliki
-  - Dodajemy zmiany do indeksu: `git add`
-  - Zapisujemy zmiany jako commit: `git commit --ammend`
-  - Kontynuujemy: `git rebase --continue`
+* Edytujemy komentarz
+* Zapisujemy plik
+* Zamykamy okno pliku
+* Git automatycznie kontynuuje operację `rebase`
 
 !SUB
-### Git - zmiany w starszych commitach
+### Git rebase --interactive
+
+W przypadku `edit` git zatrzyma się:
+
+* Edytujemy wybrane pliki
+* Dodajemy zmiany do indeksu: `git add`
+* Zapisujemy zmiany jako commit: `git commit --ammend`
+* Kontynuujemy: `git rebase --continue`
+
+!SUB
+### Git rebase --interactive
 
 W przypadku wystąpienia konfliktów:
 
