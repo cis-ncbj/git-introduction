@@ -152,8 +152,8 @@ W gałęzi **master**:
 
 * Upiększamy wypisywanie danych: zamieniamy funkcję `print` na `pprint`
 ```python
-import pprint
-pprint.pprint(data)
+from pprint import pprint
+pprint(data)
 ```
 * Zapisujemy jako commit
 
