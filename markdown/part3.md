@@ -51,16 +51,22 @@ git status
 
 Dodajemy do pliku *main.py* nową funkcję która odczyta dane z pliku w formacie JSON
 
-- dodajemy plik z danymi
-- otwieramy plik przy pomocy `open`
-- czytamy zawartość przy pomocy `json.load`
-- modyfikujemy *__main__* aby korzystał z nowej funkcji
+* dodajemy plik z danymi
+  - słownik w formacie JSON wygląda identycznie jak w python
+* otwieramy plik przy pomocy `open`
+  - `f = open("nazwa_pliku.json")`
+* czytamy zawartość przy pomocy `json.load`
+```python
+import json
+data = json.load(f)
+```
+* modyfikujemy *__main__* aby korzystał z nowej funkcji
 
 !SUB
 ### Zapisujemy zmiany
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-```
+```bash
 git add main.py
 git commit
 git status
@@ -78,6 +84,7 @@ git status
 
 * Dodajemy do pliku *main.py* możliwość przeczytania dwóch plików i połączenia danych
 * Korzystamy z metody `extend` dostępnej dla obiektów list w python
+  - `data.extend(data2)`
 * Zapisujemy zmiany jako **commit**.
 
   Jako komentarz używamy zwrotu **Fix #1**
@@ -86,7 +93,7 @@ git status
 ### Wysyłamy nową gałąź
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-```
+```bash
 git checkout feature
 git push -u origin feature
 ```
@@ -108,7 +115,7 @@ git push -u origin feature
 ### Praca z gałęziami
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
-```
+```bash
 git status
 ls
 git checkout master
@@ -143,7 +150,11 @@ git diff feature
 
 W gałęzi **master**:
 
-* Upiększamy wypisywanie danych: zamieniamy funkcję `print` na `pprint.pprint`
+* Upiększamy wypisywanie danych: zamieniamy funkcję `print` na `pprint`
+```python
+import pprint
+pprint.pprint(data)
+```
 * Zapisujemy jako commit
 
   Jako komentarza używamy zwrotu **Fixes #2**
@@ -183,7 +194,7 @@ Załóżmy że gałęzie Feature oraz Master rozjechały się
 
 Będąc w gałęzi **master** wykonujemy *merge* zmian z gałęzi **feature**
 
-```
+```bash
 git checkout master
 git merge feature
 gitk --all
@@ -269,7 +280,7 @@ _**git cherry-pick**_ - pozwala dodać pojedynczy commit z innej gałęzi
 
 Cofamy merge w gałęzi master
 
-```
+```bash
 git reset --hard HEAD^
 ```
 
@@ -289,7 +300,7 @@ Uwaga!!! `git reset --hard` usuwa pliki
 
 Będąc w gałęzi **feature** wykonujemy *rebase* zmian na **HEAD** gałęzi **master**
 
-```
+```bash
 git checkout feature
 git rebase master
 gitk --all

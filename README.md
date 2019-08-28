@@ -17,6 +17,6 @@ docker run -d -p 80:80 --name slides \
 ```
 - Or use docker-compose to avoid some issues with nginx when running docker in a VM using boot2docker
 ```
-docker compuse up -d
+docker-compose up -d
 ```
 - Open a browser [slides](http://localhost/)

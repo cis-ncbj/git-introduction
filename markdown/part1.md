@@ -322,8 +322,8 @@ git log <hash commit-u>
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
 - W pliku *main.py* definiujemy
-  - Dane w postaci listy słowników opisujących wybrane obiekty np. zwierzęta
-  - Definiujemy funkcję *display* która wypisze Dane na ekran
+  - Dane w postaci __globalnej__ listy słowników opisujących wybrane obiekty np. zwierzęta
+  - Definiujemy funkcję *display* która przyjmuje Dane jako parametr i wypisuje na ekran
   - Wywołujemy *display* wewnątrz *__main__*
 
 !SUB

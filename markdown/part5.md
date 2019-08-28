@@ -7,7 +7,7 @@
 !SUB
 ### Klony
 
-[data-science-ipython-notebooks](https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks)
+[git-for-scientists](https://code.cis.gov.pl/developerscis/git-for-scientists)
 
 ![clones](images/clones.jpg)<!-- .element width="50%" -->
 
@@ -22,13 +22,13 @@ _**git clone**_ - Klonuje / tworzy kopię zdalnego repozytorium lokalnie
 Klonowanie istniejącego repozytorium (SSH):
 
 ```
-git clone git@code.cis.gov.pl:developerscis/data-science-ipython-notebooks.git
+git clone git@code.cis.gov.pl:developerscis/git-for-scientists.git
 ```
 
 Klonowanie istniejącego repozytorium (HTTPS):
 
 ```
-git clone https://code.cis.gov.pl/developerscis/data-science-ipython-notebooks.git
+git clone https://code.cis.gov.pl/developerscis/git-for-scientists.git
 ```
 
 Klonowanie istniejącego lokalnego repozytorium:
@@ -49,7 +49,7 @@ git remote --help
 Podczas operacji `clone` domyślnie dodawane jest zdalne repozytorium `origin`
 
 ```
-cd data-science-ipython-notebooks
+cd git-for-scientists
 git remote -v
 ```
 
@@ -115,22 +115,12 @@ Tworzymy gałąź na poprawki które przygotowujemy do włączenia do *upstream*
 git checkout -b <username>
 ```
 
-Uruchamiamy notebook-a
+* Zapoznajmey się z `Main.md`
+* Wybieramy jeden z "rozdziałów"
+* Edytujemy plik rozdziału zgodnie z zawartym __TODO__
 
 ```
-cd <matplotlib|numpy|pandas|scikit-learn|scipy>
-jupyter notebook
-```
-
-* Zapoznajmey się z notebookiem
-* Dodajemy jakąś zmianę:
-  * Zmiana rozmiaru próbki
-  * Zmiana parametrów
-  * Komentarz
-  * Dodatkowy plot
-
-```
-git add <my_notebook>.ipynb
+git add <rozdział>.md
 git commit
 ```
 

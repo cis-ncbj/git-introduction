@@ -54,7 +54,7 @@ _**Każda**_ zmiana zaczyna się od utworzenia nowej gałęzi
 !SUB
 ### Feature Branch / GitHub workflow
 
-_**Każdy**_ merge poprzedzony jet merge/pull request-em i recenzją kodu
+_**Każdy**_ merge poprzedzony jest merge/pull request-em i recenzją kodu
 
 ![branch workflow](images/GitHub-Flow.png)
 
