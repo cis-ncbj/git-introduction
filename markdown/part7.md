@@ -81,7 +81,7 @@ Pozwala na prostą poprawkę / zmianę komentrza
 
 !SUB
 ### Git - zmiany w starszych commitach
-<!-- .slide: data-background="#bed3f4" data-transition="fade" -->
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 _**git rebase --interactive**_ - pozwala na interaktywne wybieranie commitów oraz ich edycję
 
@@ -106,6 +106,7 @@ x, exec = run command (the rest of the line) using shell
 
 !SUB
 ### Git rebase --interactive
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 Konfigurujemy git-a aby korzystał z VSC jako diff-tool dla aktualnego projektu:
 
@@ -145,6 +146,7 @@ Dodajemy nowe sekcje w pliku konfiguracyjnym:
 
 !SUB
 ### Git rebase --interactive
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 Ćwiczenie - wyedytujmy 4 ostatnie commity:
 
@@ -162,6 +164,7 @@ pick 2b43748 Aktualizacja dokumentacji
 
 !SUB
 ### Git rebase --interactive
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 Dla _**reword**_ i _**squash**_ otworzy się edytor z zawartością komentarza:
 
@@ -172,6 +175,7 @@ Dla _**reword**_ i _**squash**_ otworzy się edytor z zawartością komentarza:
 
 !SUB
 ### Git rebase --interactive
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 W przypadku _**edit**_ git zatrzyma się:
 
@@ -196,6 +200,7 @@ git rebase --continue
 
 !SUB
 ### Git rebase --interactive
+<!-- .slide: data-background="#c6e0a3" data-transition="fade" -->
 
 W przypadku wystąpienia konfliktów:
 
