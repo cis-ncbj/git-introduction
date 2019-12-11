@@ -5,11 +5,12 @@
 !SUB
 ### Żargon
 
-* Na potrzeby tej prezentacji będziemy korzystać z wyrażeń takich jak:
-  * *tree/drzewo* - całość historii zmian w repozytorium git
-  * *branch/gałąź* - odgałęzienia w historii zmian
-  * *commit* - pojedyncza zmiana (może obejmować wiele plików)
-  * *merge* - łączenie gałęzi
+Na potrzeby tej prezentacji będziemy korzystać z wyrażeń takich jak:
+
+* *tree/drzewo* - całość historii zmian w repozytorium git
+* *branch/gałąź* - odgałęzienia w historii zmian
+* *commit* - pojedyncza zmiana (może obejmować wiele plików)
+* *merge* - łączenie gałęzi
 
 !SUB
 ### Git
@@ -208,9 +209,10 @@ commit "na skróty"
 git commit -a -m "<Commit message>"
 ```
 
-* Commity powinny być:
-  * nieduże i częste
-  * dobrze opisane
+Commity powinny być:
+
+* nieduże i częste
+* dobrze opisane
 
 !SUB
 ### Zapisujemy zmiany
@@ -234,12 +236,11 @@ git commit -a -m "<Commit message>"
 ### Praca z kodem 1
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-- Dodajemy plik *README.md* z opisem naszych ćwiczeń
-- W pliku *main.py* definiujemy *__main__*
+* Dodajemy plik *README.md* z opisem naszych ćwiczeń
+* W pliku *main.py* dodajemy instrukcję wypisania na ekran
 
 ```
-if __name__== "__main__":
-    print("START")
+print("Git Handson")
 ```
 
 !SUB
@@ -279,9 +280,9 @@ A  parametry.txt    #<2>
 * `M` - zawartość śledzonego pliku została zmodyfikowana
 * pierwsza kolumna określa stan pliku w indeksie
 * druga kolumna określa stan pliku w katalogu roboczym
-  * <1> - plik został zmodyfikowany w katalogu roboczym
-  * <2> - plik został dodany do indeksu
-  * <3> - plik zawiera zmiany zarówno w katalogu roboczym jak i indeksie (został zmodyfikowany, dodany do indeksu, a potem zmodyfikowany ponownie)
+  - <1> - plik został zmodyfikowany w katalogu roboczym
+  - <2> - plik został dodany do indeksu
+  - <3> - plik zawiera zmiany zarówno w katalogu roboczym jak i indeksie (został zmodyfikowany, dodany do indeksu, a potem zmodyfikowany ponownie)
 
 !SUB
 ### git status
@@ -321,10 +322,12 @@ git log <hash commit-u>
 ### Praca z kodem 2
 <!-- .slide: data-background="#f7cd99" data-transition="fade" -->
 
-- W pliku *main.py* definiujemy
-  - Dane w postaci __globalnej__ listy słowników opisujących wybrane obiekty np. zwierzęta
-  - Definiujemy funkcję *display* która przyjmuje Dane jako parametr i wypisuje na ekran
-  - Wywołujemy *display* wewnątrz *__main__*
+W pliku *main.py* definiujemy
+
+* Dane w postaci __globalnej__ listy słowników `DATA` opisujących wybrane obiekty np. zwierzęta
+  - Niech każdy z obiektów jest opisany kilkoma atrybutami: `imię`, `gatunek`, `waga`, `wiek`
+* Definiujemy funkcję *display* która przyjmuje Dane jako __parametr__ i wypisuje na ekran
+* Wywołujemy *display* na końcu main.py
 
 !SUB
 ### Praca z kodem 2
@@ -345,13 +348,6 @@ DATA = [
         "wiek": 2
     }
 ]
-
-def display(data):
-    print(data)
-
-if __name__== "__main__":
-    print("START")
-    display(DATA)
 ```
 
 !SUB

@@ -22,6 +22,5 @@ def display(data, select=None):
         _data = data
     pprint(_data)
 
-if __name__== "__main__":
-    print("START")
-    display(DATA, 1)
+print("Git Handson")
+display(DATA, 1)

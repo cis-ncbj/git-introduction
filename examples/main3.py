@@ -24,7 +24,6 @@ def read(file_name):
     _file.close()
     return _data
 
-if __name__== "__main__":
-    print("START")
-    _data = read("data.json")
-    display(_data)
+print("Git Handson")
+_data = read("data.json")
+display(_data)

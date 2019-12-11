@@ -51,16 +51,47 @@ git status
 
 Dodajemy do pliku *main.py* nową funkcję która odczyta dane z pliku w formacie JSON
 
-* dodajemy plik z danymi
+* tworzyny nowy plik z danymi `data.json`
   - słownik w formacie JSON wygląda identycznie jak w python
 * otwieramy plik przy pomocy `open`
-  - `f = open("nazwa_pliku.json")`
+```python
+f = open("data.json")
+```
 * czytamy zawartość przy pomocy `json.load`
 ```python
 import json
 data = json.load(f)
 ```
-* modyfikujemy *__main__* aby korzystał z nowej funkcji
+* modyfikujemy *main.py* aby korzystał z *nowej funkcji* zamiast tablicy `DATA`
+
+!SUB
+### Ćwiczenia (feature)
+<!-- .slide: data-background="#f7cd99" data-transition="fade" -->
+
+__data.json__
+
+```json
+[
+    {
+        "imię": "Filemon",
+        "gatunek": "Kot",
+        "waga": 1,
+        "wiek": 0.5
+    },
+    {
+        "imię": "Szarik",
+        "gatunek": "Pies",
+        "waga": 30,
+        "wiek": 2
+    },
+    {
+        "imię": "Szczerbatek",
+        "gatunek": "Smok",
+        "waga": 1000,
+        "wiek": 5
+    }
+]
+```
 
 !SUB
 ### Zapisujemy zmiany

@@ -16,6 +16,5 @@ DATA = [
 def display(data):
     print(data)
 
-if __name__== "__main__":
-    print("START")
-    display(DATA)
+print("Git Handson")
+display(DATA)
