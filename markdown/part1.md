@@ -70,7 +70,8 @@ git config --local --list
 <!-- .slide: data-background="#bed3f4" data-transition="fade" -->
 
 ```bash
-cd working_area
+mkdir git_handson
+cd git_handson
 ```
 
 !SUB
