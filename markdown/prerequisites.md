@@ -49,7 +49,7 @@ Nie wykonujemy poleceń przedstawionych na slajdach dodatkowych :)
 git --version
 ```
 
-* Przykłady testowane były z git-em 2.13
+* Przykłady testowane były z git-em 2.13 oraz 2.39
 
 !SUB
 ### VPN
